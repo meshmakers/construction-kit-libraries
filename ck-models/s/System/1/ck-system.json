@@ -1,0 +1,225 @@
+{
+  "$schema": "https://schemas.meshmakers.cloud/construction-kit-compiled.schema.json",
+  "types": [
+    {
+      "isCollectionRoot": false,
+      "typeId": "Entity-1.0.0",
+      "isFinal": false,
+      "isAbstract": true,
+      "enableChangeStreamPreAndPostImages": false
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "Tenant-1.0.0",
+      "derivedFromCkTypeId": "System/Entity",
+      "isFinal": true,
+      "isAbstract": false,
+      "indexes": [
+        {
+          "indexType": "Ascending",
+          "fields": [
+            {
+              "attributeNames": [
+                "TenantId"
+              ]
+            }
+          ]
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System/TenantId",
+          "name": "TenantId",
+          "isOptional": false
+        },
+        {
+          "id": "System/ParentTenantId",
+          "name": "ParentTenantId",
+          "isOptional": true
+        },
+        {
+          "id": "System/DatabaseName",
+          "name": "DatabaseName",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "AutoIncrement-1.0.0",
+      "derivedFromCkTypeId": "System/Entity",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System/AutoIncrement.Start",
+          "name": "Start",
+          "isOptional": false
+        },
+        {
+          "id": "System/AutoIncrement.End",
+          "name": "End",
+          "isOptional": false
+        },
+        {
+          "id": "System/AutoIncrement.CurrentValue",
+          "name": "CurrentValue",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "Query-1.0.0",
+      "derivedFromCkTypeId": "System/Entity",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System/Query.CkTypeId",
+          "name": "QueryCkTypeId",
+          "isOptional": false
+        },
+        {
+          "id": "System/Query.Columns",
+          "name": "Columns",
+          "isOptional": false
+        },
+        {
+          "id": "System/Query.Sorting",
+          "name": "Sorting",
+          "isOptional": true
+        },
+        {
+          "id": "System/Query.FieldFilter",
+          "name": "FieldFilter",
+          "isOptional": true
+        },
+        {
+          "id": "System/Query.TextSearchFilter",
+          "name": "TextSearchFilter",
+          "isOptional": true
+        },
+        {
+          "id": "System/Query.AttributeSearchFilter",
+          "name": "AttributeSearchFilter",
+          "isOptional": true
+        },
+        {
+          "id": "System/Name",
+          "name": "Name",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "Configuration-1.0.0",
+      "derivedFromCkTypeId": "System/Entity",
+      "isFinal": true,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System/ConfigurationValue",
+          "name": "ConfigurationValue",
+          "isOptional": true
+        }
+      ]
+    }
+  ],
+  "associationRoles": [
+    {
+      "id": "ParentChild-1.0.0",
+      "inboundName": "Parent",
+      "outboundName": "Children",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "ZeroOrOne"
+    },
+    {
+      "id": "Related-1.0.0",
+      "inboundName": "RelatesTo",
+      "outboundName": "RelatesFrom",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "N"
+    }
+  ],
+  "attributes": [
+    {
+      "id": "Name-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "DisplayName-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Description-1.0.0",
+      "valueType": "String",
+      "description": "Further information on the item."
+    },
+    {
+      "id": "Enabled-1.0.0",
+      "valueType": "Boolean"
+    },
+    {
+      "id": "TenantId-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "ParentTenantId-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "DatabaseName-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "AutoIncrement.Start-1.0.0",
+      "valueType": "Int"
+    },
+    {
+      "id": "AutoIncrement.End-1.0.0",
+      "valueType": "Int"
+    },
+    {
+      "id": "AutoIncrement.CurrentValue-1.0.0",
+      "valueType": "Int"
+    },
+    {
+      "id": "ConfigurationValue-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Query.Columns-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Query.CkTypeId-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Query.Sorting-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Query.FieldFilter-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Query.TextSearchFilter-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Query.AttributeSearchFilter-1.0.0",
+      "valueType": "String"
+    }
+  ],
+  "records": [],
+  "enums": [],
+  "modelId": "System-1.0.0",
+  "dependencies": []
+}
