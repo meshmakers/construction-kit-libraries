@@ -1,0 +1,135 @@
+{
+  "$schema": "https://schemas.meshmakers.cloud/construction-kit-compiled.schema.json",
+  "types": [
+    {
+      "isCollectionRoot": true,
+      "typeId": "ServiceHook-1.0.0",
+      "derivedFromCkTypeId": "System/Entity",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System/Enabled",
+          "name": "Enabled",
+          "isOptional": false
+        },
+        {
+          "id": "System/Query.CkTypeId",
+          "name": "QueryCkTypeId",
+          "isOptional": false
+        },
+        {
+          "id": "System/Query.FieldFilter",
+          "name": "FieldFilter",
+          "isOptional": false
+        },
+        {
+          "id": "System/Name",
+          "name": "Name",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot/ServiceHook.Uri",
+          "name": "ServiceHookBaseUri",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot/ServiceHook.Action",
+          "name": "ServiceHookAction",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot/ServiceHook.ApiKey",
+          "name": "ServiceHookApiKey",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "AttributeAggregateConfiguration-1.0.0",
+      "derivedFromCkTypeId": "System/Entity",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "System.Bot/Configures",
+          "targetCkTypeId": "System/Entity"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System/Enabled",
+          "name": "IsAutoCompleteEnabled",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot/AutoCompleteFilter",
+          "name": "AutoCompleteFilter",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot/AutoCompleteLimit",
+          "name": "AutoCompleteLimit",
+          "isOptional": false
+        }
+      ]
+    }
+  ],
+  "associationRoles": [
+    {
+      "id": "Configures-1.0.0",
+      "inboundName": "Configures",
+      "outboundName": "ConfiguredBy",
+      "inboundMultiplicity": "One",
+      "outboundMultiplicity": "N",
+      "attributes": [
+        {
+          "id": "System.Bot/SelectedAttributeId",
+          "name": "SelectedAttributeId",
+          "isOptional": false
+        }
+      ]
+    }
+  ],
+  "attributes": [
+    {
+      "id": "AutoCompleteFilter-1.0.0",
+      "valueType": "String",
+      "description": "The filter for auto complete defined by a regex expression."
+    },
+    {
+      "id": "AutoCompleteLimit-1.0.0",
+      "valueType": "Int",
+      "defaultValues": [
+        "50"
+      ],
+      "description": "The maximum number of items to return from the autocomplete filter and stored at the type attribute\u0027s autoCompleteValues property."
+    },
+    {
+      "id": "SelectedAttributeId-1.0.0",
+      "valueType": "String",
+      "description": "The id of the attribute that is being configured."
+    },
+    {
+      "id": "ServiceHook.Uri-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "ServiceHook.Action-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "ServiceHook.ApiKey-1.0.0",
+      "valueType": "String"
+    }
+  ],
+  "records": [],
+  "enums": [],
+  "modelId": "System.Bot-1.0.0",
+  "dependencies": [
+    "System-1.0.0"
+  ]
+}
