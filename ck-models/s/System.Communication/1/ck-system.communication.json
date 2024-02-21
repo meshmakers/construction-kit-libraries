@@ -1,0 +1,253 @@
+{
+  "$schema": "https://schemas.meshmakers.cloud/construction-kit-compiled.schema.json",
+  "types": [
+    {
+      "isCollectionRoot": true,
+      "typeId": "CommunicationAdapter-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "System.Communication-1.0.0/CommunicationPool-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": true,
+      "attributes": [
+        {
+          "id": "System.Communication-1.0.0/LastSeen-1.0.0",
+          "name": "LastSeen",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/CommunicationState-1.0.0",
+          "name": "CommunicationState",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/ConfigurationState-1.0.0",
+          "name": "ConfigurationState",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/DeploymentState-1.0.0",
+          "name": "DeploymentState",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/AdapterType-1.0.0",
+          "name": "Type",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/Deployment.ImageName-1.0.0",
+          "name": "ImageName",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/Deployment.ImageVersion-1.0.0",
+          "name": "ImageVersion",
+          "isOptional": false
+        },
+        {
+          "id": "System-1.0.0/Name-1.0.0",
+          "name": "Name",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/AdapterConfiguration-1.0.0",
+          "name": "Configuration",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "CommunicationPool-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": true,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System.Communication-1.0.0/LastSeen-1.0.0",
+          "name": "LastSeen",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/CommunicationState-1.0.0",
+          "name": "CommunicationState",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/ConfigurationState-1.0.0",
+          "name": "ConfigurationState",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/DeploymentState-1.0.0",
+          "name": "DeploymentState",
+          "isOptional": false
+        },
+        {
+          "id": "System-1.0.0/Name-1.0.0",
+          "name": "Name",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "DataPipeline-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": true,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "System.Communication-1.0.0/CommunicationAdapter-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "System-1.0.0/Name-1.0.0",
+          "name": "Name",
+          "isOptional": false
+        },
+        {
+          "id": "System-1.0.0/Description-1.0.0",
+          "name": "Description",
+          "isOptional": true
+        },
+        {
+          "id": "System.Communication-1.0.0/AdapterPipelineConfiguration-1.0.0",
+          "name": "AdapterPipelineConfiguration",
+          "isOptional": false
+        },
+        {
+          "id": "System.Communication-1.0.0/RetrieverPipelineConfiguration-1.0.0",
+          "name": "RetrieverPipelineConfiguration",
+          "isOptional": false
+        }
+      ]
+    }
+  ],
+  "associationRoles": [],
+  "attributes": [
+    {
+      "id": "AdapterConfiguration-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "AdapterPipelineConfiguration-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "AdapterType-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "CommunicationState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Communication-1.0.0/CommunicationState-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
+    },
+    {
+      "id": "ConfigurationState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Communication-1.0.0/ConfigurationState-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
+    },
+    {
+      "id": "Deployment.ImageName-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "Deployment.ImageVersion-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "DeploymentState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Communication-1.0.0/DeploymentState-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
+    },
+    {
+      "id": "LastSeen-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "RetrieverPipelineConfiguration-1.0.0",
+      "valueType": "String"
+    }
+  ],
+  "records": [],
+  "enums": [
+    {
+      "enumId": "CommunicationState-1.0.0",
+      "useFlags": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Offline"
+        },
+        {
+          "key": 1,
+          "name": "Online"
+        }
+      ]
+    },
+    {
+      "enumId": "ConfigurationState-1.0.0",
+      "useFlags": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Disabled"
+        },
+        {
+          "key": 1,
+          "name": "Enabled"
+        }
+      ]
+    },
+    {
+      "enumId": "DeploymentState-1.0.0",
+      "useFlags": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Created"
+        },
+        {
+          "key": 1,
+          "name": "Pending"
+        },
+        {
+          "key": 2,
+          "name": "Deployed"
+        },
+        {
+          "key": 3,
+          "name": "DeploymentError"
+        },
+        {
+          "key": 4,
+          "name": "ConfigurationError"
+        }
+      ]
+    }
+  ],
+  "modelId": "System.Communication-1.0.0",
+  "dependencies": [
+    "System-1.0.0"
+  ]
+}
