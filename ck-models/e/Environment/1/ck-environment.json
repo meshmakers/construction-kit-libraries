@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.meshmakers.cloud/construction-kit-compiled.schema.json",
+  "types": [
+    {
+      "isCollectionRoot": false,
+      "typeId": "WasteMeter-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/Asset-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "Environment-1.0.0/Weight-1.0.0",
+          "name": "Weight",
+          "isOptional": false
+        },
+        {
+          "id": "Environment-1.0.0/TareWeight-1.0.0",
+          "name": "TareWeight",
+          "isOptional": false
+        },
+        {
+          "id": "Environment-1.0.0/GrossWeight-1.0.0",
+          "name": "GrossWeight",
+          "isOptional": false
+        }
+      ]
+    }
+  ],
+  "associationRoles": [],
+  "attributes": [
+    {
+      "id": "GrossWeight-1.0.0",
+      "valueType": "Double",
+      "metaData": [
+        {
+          "key": "Unit",
+          "value": "t"
+        },
+        {
+          "key": "Decimals",
+          "value": "2"
+        },
+        {
+          "key": "Type",
+          "value": "gross"
+        }
+      ]
+    },
+    {
+      "id": "SampleAttribute1-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "TareWeight-1.0.0",
+      "valueType": "Double",
+      "metaData": [
+        {
+          "key": "Unit",
+          "value": "t"
+        },
+        {
+          "key": "Decimals",
+          "value": "2"
+        },
+        {
+          "key": "Type",
+          "value": "tare"
+        }
+      ]
+    },
+    {
+      "id": "Weight-1.0.0",
+      "valueType": "Double",
+      "metaData": [
+        {
+          "key": "Unit",
+          "value": "t"
+        },
+        {
+          "key": "Decimals",
+          "value": "2"
+        },
+        {
+          "key": "Type",
+          "value": "net"
+        }
+      ]
+    }
+  ],
+  "records": [],
+  "enums": [],
+  "modelId": "Environment-1.0.0",
+  "dependencies": [
+    "Basic-1.0.0"
+  ]
+}
