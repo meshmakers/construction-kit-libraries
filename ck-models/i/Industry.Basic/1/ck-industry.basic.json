@@ -1,0 +1,359 @@
+{
+  "$schema": "https://schemas.meshmakers.cloud/construction-kit-compiled.schema.json",
+  "types": [
+    {
+      "isCollectionRoot": false,
+      "typeId": "Alarm-1.0.0",
+      "derivedFromCkTypeId": "Industry.Basic-1.0.0/Event-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "Industry.Basic-1.0.0/EventAlarmState-1.0.0",
+          "name": "State",
+          "isOptional": false
+        },
+        {
+          "id": "Industry.Basic-1.0.0/EventAlarmType-1.0.0",
+          "name": "Type",
+          "isOptional": false
+        },
+        {
+          "id": "Industry.Basic-1.0.0/EventAlarmSource-1.0.0",
+          "name": "Source",
+          "isOptional": false
+        },
+        {
+          "id": "Industry.Basic-1.0.0/EventAlarmGroup-1.0.0",
+          "name": "Group",
+          "autoCompleteValues": [
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "isOptional": false
+        },
+        {
+          "id": "Industry.Basic-1.0.0/EventAlarmCause-1.0.0",
+          "name": "Cause",
+          "isOptional": false
+        },
+        {
+          "id": "Industry.Basic-1.0.0/EventAlarmReactivatedCount-1.0.0",
+          "name": "ReactivatedCount",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "Event-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "Industry.Basic-1.0.0/EventSource-1.0.0",
+          "targetCkTypeId": "Basic-1.0.0/Asset-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "Basic-1.0.0/Time-1.0.0",
+          "name": "Time",
+          "isOptional": false
+        },
+        {
+          "id": "Industry.Basic-1.0.0/Message-1.0.0",
+          "name": "Message",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "Machine-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/Asset-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "attributes": [
+        {
+          "id": "Basic-1.0.0/NamePlate-1.0.0",
+          "name": "NamePlate",
+          "isOptional": true
+        },
+        {
+          "id": "Industry.Basic-1.0.0/OperatingHoursCounter-1.0.0",
+          "name": "OperatingHours",
+          "isOptional": true
+        },
+        {
+          "id": "Industry.Basic-1.0.0/StandStillCounter-1.0.0",
+          "name": "StandStillCounter",
+          "isOptional": true
+        },
+        {
+          "id": "Industry.Basic-1.0.0/State-1.0.0",
+          "name": "State",
+          "isOptional": false
+        }
+      ]
+    }
+  ],
+  "associationRoles": [
+    {
+      "id": "EventSource-1.0.0",
+      "inboundName": "EventSource",
+      "outboundName": "Events",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "ZeroOrOne"
+    }
+  ],
+  "attributes": [
+    {
+      "id": "EventAlarmCause-1.0.0",
+      "valueType": "String",
+      "isDataStream": true
+    },
+    {
+      "id": "EventAlarmGroup-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EventAlarmReactivatedCount-1.0.0",
+      "valueType": "Int",
+      "defaultValues": [
+        "0"
+      ]
+    },
+    {
+      "id": "EventAlarmSource-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Industry.Basic-1.0.0/EventAlarmSource-1.0.0"
+    },
+    {
+      "id": "EventAlarmState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Industry.Basic-1.0.0/EventAlarmState-1.0.0"
+    },
+    {
+      "id": "EventAlarmType-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Industry.Basic-1.0.0/EventAlarmType-1.0.0"
+    },
+    {
+      "id": "ImportedEnergy-1.0.0",
+      "valueType": "Double",
+      "metaData": [
+        {
+          "key": "Unit",
+          "value": "kWh"
+        },
+        {
+          "key": "Decimals",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "id": "Message-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "OperatingHoursCounter-1.0.0",
+      "valueType": "Int"
+    },
+    {
+      "id": "Power-1.0.0",
+      "valueType": "Double",
+      "metaData": [
+        {
+          "key": "Unit",
+          "value": "kW"
+        },
+        {
+          "key": "Decimals",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "id": "StandStillCounter-1.0.0",
+      "valueType": "Int"
+    },
+    {
+      "id": "State-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Industry.Basic-1.0.0/State-1.0.0"
+    }
+  ],
+  "records": [],
+  "enums": [
+    {
+      "enumId": "EventAlarmSource-1.0.0",
+      "useFlags": true,
+      "values": [
+        {
+          "key": 0,
+          "name": "FieldDevice"
+        },
+        {
+          "key": 1,
+          "name": "ControlSystem"
+        },
+        {
+          "key": 2,
+          "name": "HMI"
+        },
+        {
+          "key": 3,
+          "name": "Internal"
+        }
+      ]
+    },
+    {
+      "enumId": "EventAlarmState-1.0.0",
+      "useFlags": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Normal",
+          "description": "The normal state should not use an audible indication. The normal state visual indication should be the same as indications without alarms."
+        },
+        {
+          "key": 1,
+          "name": "Unacknowledged",
+          "description": "The unacknowledged alarm state should use both an audible indication and visual indication. The audible indication should be silenced with a silence action or acknowledge action by the operator. The visual indication should be clearly distinguishable from the normal state indication by using colours and symbols (e.g., shape or text). The visual indication for an unacknowledged alarm should include a blinking element. There are some environments in which an audible indication is not an effective indicator of unacknowledged alarms."
+        },
+        {
+          "key": 2,
+          "name": "Acknowledged",
+          "description": "The acknowledged alarm state should not use an audible indication. The acknowledged alarm state visual indication should be clearly distinguishable from the normal state indication by using symbols (e.g., shape or text), and should be identical in colour to the unacknowledged alarm indication. A blinking element should not be used in the visual indication for an acknowledged alarm."
+        },
+        {
+          "key": 3,
+          "name": "ReturnToNormal",
+          "description": "The return-to-normal unacknowledged state should not use an audible indication. The return to-normal unacknowledged state visual indication may be the same as the normal state or it may indicate an unacknowledged status with a blinking element."
+        },
+        {
+          "key": 4,
+          "name": "Shelved",
+          "description": "The shelved alarm state should be visually indicated in the HMI. The visual indication for a shelved alarm should not include a blinking element. The shelved alarm state indication should be distinct. No audible indication should be used to identify shelved alarms."
+        },
+        {
+          "key": 5,
+          "name": "SuppressedByDesign",
+          "description": "The suppressed-by-design alarm state should be visually indicated in the HMI. The visual indication for an alarm suppressed by design should not include a blinking element. The suppressed-by-design alarm state indication should be distinct from the unacknowledged and acknowledged state indications. No audible indication should be used to identify alarms suppressed by design."
+        },
+        {
+          "key": 6,
+          "name": "OutOfService",
+          "description": "The out-of-service alarm state should be visually indicated in the HMI. The visual indication for an out-of-service alarm should not include a blinking element. The out-of-service alarm state indication should be distinct from the unacknowledged and acknowledged state indications. No audible indication should be used to identify out-of-service alarms."
+        }
+      ]
+    },
+    {
+      "enumId": "EventAlarmType-1.0.0",
+      "useFlags": true,
+      "values": [
+        {
+          "key": 0,
+          "name": "Absolute"
+        },
+        {
+          "key": 1,
+          "name": "Deviation"
+        },
+        {
+          "key": 2,
+          "name": "RateOfChange"
+        },
+        {
+          "key": 3,
+          "name": "Discrepancy"
+        },
+        {
+          "key": 4,
+          "name": "Calculated"
+        },
+        {
+          "key": 5,
+          "name": "RecipeDriven"
+        },
+        {
+          "key": 6,
+          "name": "BitPattern"
+        },
+        {
+          "key": 7,
+          "name": "ControllerOutput"
+        },
+        {
+          "key": 8,
+          "name": "SystemDiagnostic"
+        },
+        {
+          "key": 9,
+          "name": "InstrumentDiagnostic"
+        },
+        {
+          "key": 10,
+          "name": "Adjustable"
+        },
+        {
+          "key": 11,
+          "name": "Adaptive"
+        },
+        {
+          "key": 12,
+          "name": "ReAlarming"
+        },
+        {
+          "key": 13,
+          "name": "Statistical"
+        },
+        {
+          "key": 14,
+          "name": "FirstOut"
+        },
+        {
+          "key": 15,
+          "name": "BadMeasurement"
+        }
+      ]
+    },
+    {
+      "enumId": "State-1.0.0",
+      "useFlags": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Off"
+        },
+        {
+          "key": 1,
+          "name": "On"
+        },
+        {
+          "key": 2,
+          "name": "Unknown"
+        },
+        {
+          "key": 3,
+          "name": "Error"
+        },
+        {
+          "key": 4,
+          "name": "Idle"
+        }
+      ]
+    }
+  ],
+  "modelId": "Industry.Basic-1.0.0",
+  "dependencies": [
+    "Basic-1.0.0"
+  ]
+}
