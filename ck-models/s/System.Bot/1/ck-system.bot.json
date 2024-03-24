@@ -3,77 +3,79 @@
   "types": [
     {
       "isCollectionRoot": true,
-      "typeId": "ServiceHook-1.0.0",
-      "derivedFromCkTypeId": "System/Entity",
+      "typeId": "AttributeAggregateConfiguration-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
+      "associations": [
+        {
+          "id": "System.Bot-1.0.0/Configures-1.0.0",
+          "targetCkTypeId": "System-1.0.0/Entity-1.0.0"
+        }
+      ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
-          "id": "System/Enabled",
-          "name": "Enabled",
+          "id": "System-1.0.0/Enabled-1.0.0",
+          "name": "IsAutoCompleteEnabled",
           "isOptional": false
         },
         {
-          "id": "System/Query.CkTypeId",
-          "name": "QueryCkTypeId",
+          "id": "System.Bot-1.0.0/AutoCompleteFilter-1.0.0",
+          "name": "AutoCompleteFilter",
           "isOptional": false
         },
         {
-          "id": "System/Query.FieldFilter",
-          "name": "FieldFilter",
+          "id": "System.Bot-1.0.0/AutoCompleteLimit-1.0.0",
+          "name": "AutoCompleteLimit",
           "isOptional": false
-        },
-        {
-          "id": "System/Name",
-          "name": "Name",
-          "isOptional": false
-        },
-        {
-          "id": "System.Bot/ServiceHook.Uri",
-          "name": "ServiceHookBaseUri",
-          "isOptional": false
-        },
-        {
-          "id": "System.Bot/ServiceHook.Action",
-          "name": "ServiceHookAction",
-          "isOptional": false
-        },
-        {
-          "id": "System.Bot/ServiceHook.ApiKey",
-          "name": "ServiceHookApiKey",
-          "isOptional": true
         }
       ]
     },
     {
       "isCollectionRoot": true,
-      "typeId": "AttributeAggregateConfiguration-1.0.0",
-      "derivedFromCkTypeId": "System/Entity",
+      "typeId": "ServiceHook-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
-      "associations": [
-        {
-          "id": "System.Bot/Configures",
-          "targetCkTypeId": "System/Entity"
-        }
-      ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
-          "id": "System/Enabled",
-          "name": "IsAutoCompleteEnabled",
+          "id": "System-1.0.0/Enabled-1.0.0",
+          "name": "Enabled",
           "isOptional": false
         },
         {
-          "id": "System.Bot/AutoCompleteFilter",
-          "name": "AutoCompleteFilter",
+          "id": "System-1.0.0/Query.CkTypeId-1.0.0",
+          "name": "QueryCkTypeId",
           "isOptional": false
         },
         {
-          "id": "System.Bot/AutoCompleteLimit",
-          "name": "AutoCompleteLimit",
+          "id": "System-1.0.0/Query.FieldFilter-1.0.0",
+          "name": "FieldFilter",
           "isOptional": false
+        },
+        {
+          "id": "System-1.0.0/Name-1.0.0",
+          "name": "Name",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot-1.0.0/ServiceHook.Uri-1.0.0",
+          "name": "ServiceHookBaseUri",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot-1.0.0/ServiceHook.Action-1.0.0",
+          "name": "ServiceHookAction",
+          "isOptional": false
+        },
+        {
+          "id": "System.Bot-1.0.0/ServiceHook.ApiKey-1.0.0",
+          "name": "ServiceHookApiKey",
+          "isOptional": true
         }
       ]
     }
@@ -87,7 +89,7 @@
       "outboundMultiplicity": "N",
       "attributes": [
         {
-          "id": "System.Bot/SelectedAttributeId",
+          "id": "System.Bot-1.0.0/SelectedAttributeId-1.0.0",
           "name": "SelectedAttributeId",
           "isOptional": false
         }
@@ -109,13 +111,13 @@
       "description": "The maximum number of items to return from the autocomplete filter and stored at the type attribute\u0027s autoCompleteValues property."
     },
     {
+      "id": "CronExpression-1.0.0",
+      "valueType": "String"
+    },
+    {
       "id": "SelectedAttributeId-1.0.0",
       "valueType": "String",
       "description": "The id of the attribute that is being configured."
-    },
-    {
-      "id": "ServiceHook.Uri-1.0.0",
-      "valueType": "String"
     },
     {
       "id": "ServiceHook.Action-1.0.0",
@@ -123,6 +125,10 @@
     },
     {
       "id": "ServiceHook.ApiKey-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "ServiceHook.Uri-1.0.0",
       "valueType": "String"
     }
   ],
