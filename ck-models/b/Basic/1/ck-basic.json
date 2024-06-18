@@ -13,7 +13,8 @@
           "targetCkTypeId": "Basic-1.0.0/EquipmentGroup-1.0.0"
         }
       ],
-      "enableChangeStreamPreAndPostImages": false
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
     },
     {
       "isCollectionRoot": false,
@@ -27,7 +28,8 @@
           "targetCkTypeId": "Basic-1.0.0/EquipmentGroup-1.0.0"
         }
       ],
-      "enableChangeStreamPreAndPostImages": false
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
     },
     {
       "isCollectionRoot": false,
@@ -45,7 +47,8 @@
           "targetCkTypeId": "Basic-1.0.0/EquipmentGroup-1.0.0"
         }
       ],
-      "enableChangeStreamPreAndPostImages": false
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
     },
     {
       "isCollectionRoot": false,
@@ -53,7 +56,8 @@
       "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
-      "enableChangeStreamPreAndPostImages": false
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
     },
     {
       "isCollectionRoot": true,
@@ -62,6 +66,7 @@
       "isFinal": false,
       "isAbstract": true,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "System-1.0.0/Name-1.0.0",
@@ -71,7 +76,7 @@
         {
           "id": "System-1.0.0/Description-1.0.0",
           "name": "Description",
-          "isOptional": false
+          "isOptional": true
         }
       ]
     }
@@ -748,8 +753,8 @@
       ]
     }
   ],
-  "modelId": "Basic-1.0.0",
   "dependencies": [
     "System-1.0.0"
-  ]
+  ],
+  "modelId": "Basic-1.0.0"
 }
