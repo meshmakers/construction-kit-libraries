@@ -3,11 +3,39 @@
   "types": [
     {
       "isCollectionRoot": false,
+      "typeId": "EnvironmentalGoal-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "Basic-1.0.0/TreeNode-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "attributes": [
+        {
+          "id": "Environment-1.0.0/GoalText-1.0.0",
+          "name": "GoalText",
+          "isOptional": false
+        },
+        {
+          "id": "Environment-1.0.0/GoalState-1.0.0",
+          "name": "GoalStatus",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
       "typeId": "WasteMeter-1.0.0",
       "derivedFromCkTypeId": "Basic-1.0.0/Asset-1.0.0",
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Environment-1.0.0/Weight-1.0.0",
@@ -29,6 +57,15 @@
   ],
   "associationRoles": [],
   "attributes": [
+    {
+      "id": "GoalState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Environment-1.0.0/GoalState-1.0.0"
+    },
+    {
+      "id": "GoalText-1.0.0",
+      "valueType": "String"
+    },
     {
       "id": "GrossWeight-1.0.0",
       "valueType": "Double",
@@ -89,9 +126,27 @@
     }
   ],
   "records": [],
-  "enums": [],
-  "modelId": "Environment-1.0.0",
+  "enums": [
+    {
+      "enumId": "GoalState-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 1,
+          "name": "OnTrack",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "OffTrack",
+          "isExtension": false
+        }
+      ]
+    }
+  ],
   "dependencies": [
     "Basic-1.0.0"
-  ]
+  ],
+  "modelId": "Environment-1.0.0"
 }
