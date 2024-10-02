@@ -14,6 +14,7 @@
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Energy-1.0.0/Voltage-1.0.0",
@@ -74,6 +75,7 @@
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Energy-1.0.0/Voltage-1.0.0",
@@ -149,6 +151,7 @@
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Energy-1.0.0/DCVoltage-1.0.0",
@@ -203,7 +206,8 @@
       "derivedFromCkTypeId": "Basic-1.0.0/Asset-1.0.0",
       "isFinal": false,
       "isAbstract": false,
-      "enableChangeStreamPreAndPostImages": false
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
     },
     {
       "isCollectionRoot": false,
@@ -218,6 +222,7 @@
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Energy-1.0.0/PeakPower-1.0.0",
@@ -244,6 +249,7 @@
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Energy-1.0.0/NumOfModules-1.0.0",
@@ -272,7 +278,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "ApparentPower-1.0.0",
@@ -286,7 +293,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "Capacity-1.0.0",
@@ -302,7 +310,8 @@
           "value": "0173-1#02-BAA564#007",
           "description": ""
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "DCAmpere-1.0.0",
@@ -316,7 +325,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "DCVoltage-1.0.0",
@@ -330,7 +340,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "ExportedEnergy-1.0.0",
@@ -344,7 +355,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "Frequency-1.0.0",
@@ -358,7 +370,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "MaximumPower-1.0.0",
@@ -372,7 +385,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "NumOfModules-1.0.0",
@@ -387,7 +401,8 @@
           "key": "Unit",
           "value": ""
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "PeakPower-1.0.0",
@@ -401,7 +416,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "PhaseInfoL1-1.0.0",
@@ -430,7 +446,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "SoC-1.0.0",
@@ -441,7 +458,8 @@
           "key": "Unit",
           "value": "%"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "SoH-1.0.0",
@@ -452,7 +470,8 @@
           "key": "Unit",
           "value": "%"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "Voltage-1.0.0",
@@ -466,7 +485,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     }
   ],
   "records": [
@@ -499,8 +519,8 @@
     }
   ],
   "enums": [],
-  "modelId": "Industry.Energy-1.0.0",
   "dependencies": [
     "Industry.Basic-1.0.0"
-  ]
+  ],
+  "modelId": "Industry.Energy-1.0.0"
 }
