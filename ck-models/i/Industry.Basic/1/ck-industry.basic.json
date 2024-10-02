@@ -8,6 +8,7 @@
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Basic-1.0.0/EventAlarmState-1.0.0",
@@ -59,6 +60,7 @@
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Basic-1.0.0/Time-1.0.0",
@@ -79,6 +81,7 @@
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Basic-1.0.0/NamePlate-1.0.0",
@@ -178,7 +181,8 @@
           "key": "Decimals",
           "value": "2"
         }
-      ]
+      ],
+      "isDataStream": true
     },
     {
       "id": "StandStillCounter-1.0.0",
@@ -195,165 +199,201 @@
     {
       "enumId": "EventAlarmSource-1.0.0",
       "useFlags": true,
+      "isExtensible": false,
       "values": [
         {
           "key": 0,
-          "name": "FieldDevice"
+          "name": "FieldDevice",
+          "isExtension": false
         },
         {
           "key": 1,
-          "name": "ControlSystem"
+          "name": "ControlSystem",
+          "isExtension": false
         },
         {
           "key": 2,
-          "name": "HMI"
+          "name": "HMI",
+          "isExtension": false
         },
         {
           "key": 3,
-          "name": "Internal"
+          "name": "Internal",
+          "isExtension": false
         }
       ]
     },
     {
       "enumId": "EventAlarmState-1.0.0",
       "useFlags": false,
+      "isExtensible": false,
       "values": [
         {
           "key": 0,
           "name": "Normal",
-          "description": "The normal state should not use an audible indication. The normal state visual indication should be the same as indications without alarms."
+          "description": "The normal state should not use an audible indication. The normal state visual indication should be the same as indications without alarms.",
+          "isExtension": false
         },
         {
           "key": 1,
           "name": "Unacknowledged",
-          "description": "The unacknowledged alarm state should use both an audible indication and visual indication. The audible indication should be silenced with a silence action or acknowledge action by the operator. The visual indication should be clearly distinguishable from the normal state indication by using colours and symbols (e.g., shape or text). The visual indication for an unacknowledged alarm should include a blinking element. There are some environments in which an audible indication is not an effective indicator of unacknowledged alarms."
+          "description": "The unacknowledged alarm state should use both an audible indication and visual indication. The audible indication should be silenced with a silence action or acknowledge action by the operator. The visual indication should be clearly distinguishable from the normal state indication by using colours and symbols (e.g., shape or text). The visual indication for an unacknowledged alarm should include a blinking element. There are some environments in which an audible indication is not an effective indicator of unacknowledged alarms.",
+          "isExtension": false
         },
         {
           "key": 2,
           "name": "Acknowledged",
-          "description": "The acknowledged alarm state should not use an audible indication. The acknowledged alarm state visual indication should be clearly distinguishable from the normal state indication by using symbols (e.g., shape or text), and should be identical in colour to the unacknowledged alarm indication. A blinking element should not be used in the visual indication for an acknowledged alarm."
+          "description": "The acknowledged alarm state should not use an audible indication. The acknowledged alarm state visual indication should be clearly distinguishable from the normal state indication by using symbols (e.g., shape or text), and should be identical in colour to the unacknowledged alarm indication. A blinking element should not be used in the visual indication for an acknowledged alarm.",
+          "isExtension": false
         },
         {
           "key": 3,
           "name": "ReturnToNormal",
-          "description": "The return-to-normal unacknowledged state should not use an audible indication. The return to-normal unacknowledged state visual indication may be the same as the normal state or it may indicate an unacknowledged status with a blinking element."
+          "description": "The return-to-normal unacknowledged state should not use an audible indication. The return to-normal unacknowledged state visual indication may be the same as the normal state or it may indicate an unacknowledged status with a blinking element.",
+          "isExtension": false
         },
         {
           "key": 4,
           "name": "Shelved",
-          "description": "The shelved alarm state should be visually indicated in the HMI. The visual indication for a shelved alarm should not include a blinking element. The shelved alarm state indication should be distinct. No audible indication should be used to identify shelved alarms."
+          "description": "The shelved alarm state should be visually indicated in the HMI. The visual indication for a shelved alarm should not include a blinking element. The shelved alarm state indication should be distinct. No audible indication should be used to identify shelved alarms.",
+          "isExtension": false
         },
         {
           "key": 5,
           "name": "SuppressedByDesign",
-          "description": "The suppressed-by-design alarm state should be visually indicated in the HMI. The visual indication for an alarm suppressed by design should not include a blinking element. The suppressed-by-design alarm state indication should be distinct from the unacknowledged and acknowledged state indications. No audible indication should be used to identify alarms suppressed by design."
+          "description": "The suppressed-by-design alarm state should be visually indicated in the HMI. The visual indication for an alarm suppressed by design should not include a blinking element. The suppressed-by-design alarm state indication should be distinct from the unacknowledged and acknowledged state indications. No audible indication should be used to identify alarms suppressed by design.",
+          "isExtension": false
         },
         {
           "key": 6,
           "name": "OutOfService",
-          "description": "The out-of-service alarm state should be visually indicated in the HMI. The visual indication for an out-of-service alarm should not include a blinking element. The out-of-service alarm state indication should be distinct from the unacknowledged and acknowledged state indications. No audible indication should be used to identify out-of-service alarms."
+          "description": "The out-of-service alarm state should be visually indicated in the HMI. The visual indication for an out-of-service alarm should not include a blinking element. The out-of-service alarm state indication should be distinct from the unacknowledged and acknowledged state indications. No audible indication should be used to identify out-of-service alarms.",
+          "isExtension": false
         }
       ]
     },
     {
       "enumId": "EventAlarmType-1.0.0",
       "useFlags": true,
+      "isExtensible": false,
       "values": [
         {
           "key": 0,
-          "name": "Absolute"
+          "name": "Absolute",
+          "isExtension": false
         },
         {
           "key": 1,
-          "name": "Deviation"
+          "name": "Deviation",
+          "isExtension": false
         },
         {
           "key": 2,
-          "name": "RateOfChange"
+          "name": "RateOfChange",
+          "isExtension": false
         },
         {
           "key": 3,
-          "name": "Discrepancy"
+          "name": "Discrepancy",
+          "isExtension": false
         },
         {
           "key": 4,
-          "name": "Calculated"
+          "name": "Calculated",
+          "isExtension": false
         },
         {
           "key": 5,
-          "name": "RecipeDriven"
+          "name": "RecipeDriven",
+          "isExtension": false
         },
         {
           "key": 6,
-          "name": "BitPattern"
+          "name": "BitPattern",
+          "isExtension": false
         },
         {
           "key": 7,
-          "name": "ControllerOutput"
+          "name": "ControllerOutput",
+          "isExtension": false
         },
         {
           "key": 8,
-          "name": "SystemDiagnostic"
+          "name": "SystemDiagnostic",
+          "isExtension": false
         },
         {
           "key": 9,
-          "name": "InstrumentDiagnostic"
+          "name": "InstrumentDiagnostic",
+          "isExtension": false
         },
         {
           "key": 10,
-          "name": "Adjustable"
+          "name": "Adjustable",
+          "isExtension": false
         },
         {
           "key": 11,
-          "name": "Adaptive"
+          "name": "Adaptive",
+          "isExtension": false
         },
         {
           "key": 12,
-          "name": "ReAlarming"
+          "name": "ReAlarming",
+          "isExtension": false
         },
         {
           "key": 13,
-          "name": "Statistical"
+          "name": "Statistical",
+          "isExtension": false
         },
         {
           "key": 14,
-          "name": "FirstOut"
+          "name": "FirstOut",
+          "isExtension": false
         },
         {
           "key": 15,
-          "name": "BadMeasurement"
+          "name": "BadMeasurement",
+          "isExtension": false
         }
       ]
     },
     {
       "enumId": "State-1.0.0",
       "useFlags": false,
+      "isExtensible": false,
       "values": [
         {
           "key": 0,
-          "name": "Off"
+          "name": "Off",
+          "isExtension": false
         },
         {
           "key": 1,
-          "name": "On"
+          "name": "On",
+          "isExtension": false
         },
         {
           "key": 2,
-          "name": "Unknown"
+          "name": "Unknown",
+          "isExtension": false
         },
         {
           "key": 3,
-          "name": "Error"
+          "name": "Error",
+          "isExtension": false
         },
         {
           "key": 4,
-          "name": "Idle"
+          "name": "Idle",
+          "isExtension": false
         }
       ]
     }
   ],
-  "modelId": "Industry.Basic-1.0.0",
   "dependencies": [
     "Basic-1.0.0"
-  ]
+  ],
+  "modelId": "Industry.Basic-1.0.0"
 }
