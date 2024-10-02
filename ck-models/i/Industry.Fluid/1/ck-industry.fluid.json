@@ -8,6 +8,7 @@
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Fluid-1.0.0/Volume-1.0.0",
@@ -48,6 +49,7 @@
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
       "attributes": [
         {
           "id": "Industry.Fluid-1.0.0/NetVolume-1.0.0",
@@ -155,8 +157,8 @@
   ],
   "records": [],
   "enums": [],
-  "modelId": "Industry.Fluid-1.0.0",
   "dependencies": [
     "Industry.Basic-1.0.0"
-  ]
+  ],
+  "modelId": "Industry.Fluid-1.0.0"
 }
