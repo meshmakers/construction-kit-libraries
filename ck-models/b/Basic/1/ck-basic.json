@@ -4,58 +4,15 @@
     {
       "isCollectionRoot": false,
       "typeId": "Asset-1.0.0",
-      "derivedFromCkTypeId": "Basic-1.0.0/Equipment-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/TreeNode-1.0.0",
       "isFinal": false,
       "isAbstract": false,
       "associations": [
         {
-          "id": "Basic-1.0.0/RelatedEquipment-1.0.0",
-          "targetCkTypeId": "Basic-1.0.0/EquipmentGroup-1.0.0"
+          "id": "Basic-1.0.0/RelatedClassification-1.0.0",
+          "targetCkTypeId": "Basic-1.0.0/TreeNode-1.0.0"
         }
       ],
-      "enableChangeStreamPreAndPostImages": false,
-      "isStreamType": false
-    },
-    {
-      "isCollectionRoot": false,
-      "typeId": "Equipment-1.0.0",
-      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
-      "isFinal": false,
-      "isAbstract": true,
-      "associations": [
-        {
-          "id": "System-1.0.0/ParentChild-1.0.0",
-          "targetCkTypeId": "Basic-1.0.0/EquipmentGroup-1.0.0"
-        }
-      ],
-      "enableChangeStreamPreAndPostImages": false,
-      "isStreamType": false
-    },
-    {
-      "isCollectionRoot": false,
-      "typeId": "EquipmentGroup-1.0.0",
-      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
-      "isFinal": false,
-      "isAbstract": false,
-      "associations": [
-        {
-          "id": "System-1.0.0/ParentChild-1.0.0",
-          "targetCkTypeId": "Basic-1.0.0/EquipmentModel-1.0.0"
-        },
-        {
-          "id": "System-1.0.0/ParentChild-1.0.0",
-          "targetCkTypeId": "Basic-1.0.0/EquipmentGroup-1.0.0"
-        }
-      ],
-      "enableChangeStreamPreAndPostImages": false,
-      "isStreamType": false
-    },
-    {
-      "isCollectionRoot": false,
-      "typeId": "EquipmentModel-1.0.0",
-      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
-      "isFinal": false,
-      "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false
     },
@@ -76,14 +33,42 @@
         {
           "id": "System-1.0.0/Description-1.0.0",
           "name": "Description",
-          "isOptional": false
+          "isOptional": true
         }
       ]
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "Tree-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "TreeNode-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "Basic-1.0.0/Tree-1.0.0"
+        },
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "Basic-1.0.0/TreeNode-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false
     }
   ],
   "associationRoles": [
     {
-      "id": "RelatedEquipment-1.0.0",
+      "id": "RelatedClassification-1.0.0",
       "inboundName": "RelatesTo",
       "outboundName": "RelatesFrom",
       "inboundMultiplicity": "N",
