@@ -181,8 +181,7 @@
           "key": "Decimals",
           "value": "2"
         }
-      ],
-      "isDataStream": true
+      ]
     },
     {
       "id": "StandStillCounter-1.0.0",
