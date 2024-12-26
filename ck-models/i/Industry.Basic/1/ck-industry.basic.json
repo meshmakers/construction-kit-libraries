@@ -116,8 +116,8 @@
   "associationRoles": [
     {
       "id": "EventSource-1.0.0",
-      "inboundName": "EventSource",
-      "outboundName": "Events",
+      "inboundName": "Events",
+      "outboundName": "EventSource",
       "inboundMultiplicity": "N",
       "outboundMultiplicity": "ZeroOrOne"
     }
@@ -471,7 +471,7 @@
     {
       "enumId": "MachineState-1.0.0",
       "useFlags": false,
-      "isExtensible": false,
+      "isExtensible": true,
       "values": [
         {
           "key": 0,
