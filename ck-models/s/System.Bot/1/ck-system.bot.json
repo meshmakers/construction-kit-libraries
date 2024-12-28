@@ -83,10 +83,10 @@
   "associationRoles": [
     {
       "id": "Configures-1.0.0",
-      "inboundName": "Configures",
-      "outboundName": "ConfiguredBy",
-      "inboundMultiplicity": "One",
-      "outboundMultiplicity": "N",
+      "inboundName": "ConfiguredBy",
+      "outboundName": "Configures",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "One",
       "attributes": [
         {
           "id": "System.Bot-1.0.0/SelectedAttributeId-1.0.0",
@@ -134,8 +134,8 @@
   ],
   "records": [],
   "enums": [],
-  "modelId": "System.Bot-1.0.0",
   "dependencies": [
     "System-1.0.0"
-  ]
+  ],
+  "modelId": "System.Bot-1.0.0"
 }
