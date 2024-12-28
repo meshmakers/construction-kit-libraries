@@ -148,15 +148,15 @@
   "associationRoles": [
     {
       "id": "ParentChild-1.0.0",
-      "inboundName": "Parent",
-      "outboundName": "Children",
-      "inboundMultiplicity": "One",
-      "outboundMultiplicity": "N"
+      "inboundName": "Children",
+      "outboundName": "Parent",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "One"
     },
     {
       "id": "Related-1.0.0",
-      "inboundName": "RelatesTo",
-      "outboundName": "RelatesFrom",
+      "inboundName": "RelatesFrom",
+      "outboundName": "RelatesTo",
       "inboundMultiplicity": "N",
       "outboundMultiplicity": "N"
     }
