@@ -332,79 +332,66 @@
     {
       "enumId": "FieldFilterOperator-1.0.0",
       "useFlags": false,
-      "isExtensible": false,
       "values": [
         {
           "key": 0,
           "name": "Equals",
-          "description": "Compares the specified field to the specified value.",
-          "isExtension": false
+          "description": "Compares the specified field to the specified value."
         },
         {
           "key": 1,
           "name": "NotEquals",
-          "description": "Compares the specified field to the specified value and returns true if the values are not equal.",
-          "isExtension": false
+          "description": "Compares the specified field to the specified value and returns true if the values are not equal."
         },
         {
           "key": 2,
           "name": "LessThan",
-          "description": "Compares the specified field to the specified value and returns true if the field value is less than the specified value.",
-          "isExtension": false
+          "description": "Compares the specified field to the specified value and returns true if the field value is less than the specified value."
         },
         {
           "key": 3,
           "name": "LessEqualThan",
-          "description": "Compares the specified field to the specified value and returns true if the field value is less than or equal to the specified value.",
-          "isExtension": false
+          "description": "Compares the specified field to the specified value and returns true if the field value is less than or equal to the specified value."
         },
         {
           "key": 4,
           "name": "GreaterThan",
-          "description": "Compares the specified field to the specified value and returns true if the field value is greater than the specified value.",
-          "isExtension": false
+          "description": "Compares the specified field to the specified value and returns true if the field value is greater than the specified value."
         },
         {
           "key": 5,
           "name": "GreaterEqualThan",
-          "description": "Compares the specified field to the specified value and returns true if the field value is greater than or equal to the specified value.",
-          "isExtension": false
+          "description": "Compares the specified field to the specified value and returns true if the field value is greater than or equal to the specified value."
         },
         {
           "key": 6,
           "name": "In",
-          "description": "Compares a field to be equal any value in the specified array.",
-          "isExtension": false
+          "description": "Compares a field to be equal any value in the specified array."
         },
         {
           "key": 7,
           "name": "NotIn",
-          "description": "Compares a field to be not equal any value in the specified array.",
-          "isExtension": false
+          "description": "Compares a field to be not equal any value in the specified array."
         },
         {
           "key": 8,
           "name": "Like",
-          "description": "Compares a field to the specified value using a pattern matching comparison. Use * as a wildcard character.",
-          "isExtension": false
+          "description": "Compares a field to the specified value using a pattern matching comparison. Use * as a wildcard character."
         },
         {
           "key": 9,
           "name": "MatchRegEx",
-          "description": "Matches a field containing a value that matches the specified regular expression.",
-          "isExtension": false
+          "description": "Matches a field containing a value that matches the specified regular expression."
         },
         {
           "key": 10,
           "name": "AnyEq",
-          "description": "Compares an array field with at least one element that matches the specified value.",
-          "isExtension": false
+          "description": "Compares an array field with at least one element that matches the specified value."
         },
         {
           "key": 11,
           "name": "Match",
-          "description": "Matches an array field with at least one element that matches all the specified query criteria.",
-          "isExtension": false
+          "description": "Matches an array field with at least one element that matches all the specified query criteria."
         }
       ],
       "description": "The operator to use for filtering fields."
@@ -412,25 +399,21 @@
     {
       "enumId": "SortOrders-1.0.0",
       "useFlags": false,
-      "isExtensible": false,
       "values": [
         {
           "key": 0,
           "name": "Default",
-          "description": "Default sorting based on data source type",
-          "isExtension": false
+          "description": "Default sorting based on data source type"
         },
         {
           "key": 1,
           "name": "Ascending",
-          "description": "Ascending order",
-          "isExtension": false
+          "description": "Ascending order"
         },
         {
           "key": 2,
           "name": "Descending",
-          "description": "Descending order",
-          "isExtension": false
+          "description": "Descending order"
         }
       ],
       "description": "The sort order of a field."
