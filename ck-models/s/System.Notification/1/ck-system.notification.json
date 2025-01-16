@@ -3,7 +3,7 @@
   "types": [
     {
       "isCollectionRoot": true,
-      "typeId": "NotificationMessage-1.0.0",
+      "typeId": "Event-1.0.0",
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
@@ -21,34 +21,9 @@
           "isOptional": true
         },
         {
-          "id": "System.Notification-1.0.0/RecipientAddress-1.0.0",
-          "name": "RecipientAddress",
+          "id": "System.Notification-1.0.0/EventLevel-1.0.0",
+          "name": "Level",
           "isOptional": false
-        },
-        {
-          "id": "System.Notification-1.0.0/Type-1.0.0",
-          "name": "NotificationType",
-          "isOptional": false
-        },
-        {
-          "id": "System.Notification-1.0.0/SentDateTime-1.0.0",
-          "name": "SentDateTime",
-          "isOptional": true
-        },
-        {
-          "id": "System.Notification-1.0.0/LastTryDateTime-1.0.0",
-          "name": "LastTryDateTime",
-          "isOptional": true
-        },
-        {
-          "id": "System.Notification-1.0.0/Status-1.0.0",
-          "name": "SendStatus",
-          "isOptional": false
-        },
-        {
-          "id": "System.Notification-1.0.0/ErrorText-1.0.0",
-          "name": "ErrorText",
-          "isOptional": true
         }
       ]
     },
@@ -72,8 +47,24 @@
           "isOptional": false
         },
         {
-          "id": "System.Notification-1.0.0/Type-1.0.0",
+          "id": "System.Notification-1.0.0/NotificationType-1.0.0",
           "name": "Type",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "StatefulEvent-1.0.0",
+      "derivedFromCkTypeId": "System.Notification-1.0.0/Event-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "attributes": [
+        {
+          "id": "System.Notification-1.0.0/EventState-1.0.0",
+          "name": "State",
           "isOptional": false
         }
       ]
@@ -83,65 +74,80 @@
   "attributes": [
     {
       "id": "BodyTemplate-1.0.0",
-      "valueType": "String"
+      "valueType": "String",
+      "description": "The body of the event as a template"
     },
     {
       "id": "BodyText-1.0.0",
-      "valueType": "String"
+      "valueType": "String",
+      "description": "The body of the event"
     },
     {
-      "id": "ErrorText-1.0.0",
-      "valueType": "String"
-    },
-    {
-      "id": "LastTryDateTime-1.0.0",
-      "valueType": "DateTime"
-    },
-    {
-      "id": "RecipientAddress-1.0.0",
-      "valueType": "String"
-    },
-    {
-      "id": "SentDateTime-1.0.0",
-      "valueType": "DateTime"
-    },
-    {
-      "id": "Status-1.0.0",
+      "id": "EventLevel-1.0.0",
       "valueType": "Enum",
-      "valueCkEnumId": "System.Notification-1.0.0/NotificationStates-1.0.0",
-      "defaultValues": [
-        "0"
-      ]
+      "valueCkEnumId": "System.Notification-1.0.0/EventLevels-1.0.0",
+      "description": "Defines the level of the event (Information, Warning, Error)"
+    },
+    {
+      "id": "EventState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Notification-1.0.0/EventStates-1.0.0",
+      "description": "Defines the state of the event (Active, Inactive)"
+    },
+    {
+      "id": "NotificationType-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Notification-1.0.0/NotificationTypes-1.0.0",
+      "description": "Defines the type of the notification (Email, SMS, Push)"
     },
     {
       "id": "SubjectTemplate-1.0.0",
-      "valueType": "String"
+      "valueType": "String",
+      "description": "The subject of the event as a template"
     },
     {
       "id": "SubjectText-1.0.0",
-      "valueType": "String"
-    },
-    {
-      "id": "Type-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "System.Notification-1.0.0/NotificationTypes-1.0.0"
+      "valueType": "String",
+      "description": "The subject of the event"
     }
   ],
   "records": [],
   "enums": [
     {
-      "enumId": "NotificationStates-1.0.0",
+      "enumId": "EventLevels-1.0.0",
       "useFlags": false,
       "isExtensible": false,
       "values": [
         {
           "key": 0,
-          "name": "Pending",
+          "name": "Information",
           "isExtension": false
         },
         {
           "key": 1,
-          "name": "Sent",
+          "name": "Warning",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "Error",
+          "isExtension": false
+        }
+      ]
+    },
+    {
+      "enumId": "EventStates-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Active",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Inactive",
           "isExtension": false
         },
         {
@@ -164,6 +170,11 @@
         {
           "key": 2,
           "name": "SMS",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "Push",
           "isExtension": false
         }
       ]
