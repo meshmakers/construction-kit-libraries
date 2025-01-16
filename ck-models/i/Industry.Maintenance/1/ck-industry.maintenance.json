@@ -403,6 +403,18 @@
       ]
     },
     {
+      "enumId": "OrderPriority-1.0.0",
+      "useFlags": false,
+      "isExtensible": true,
+      "values": [
+        {
+          "key": 0,
+          "name": "Undefined",
+          "isExtension": false
+        }
+      ]
+    },
+    {
       "enumId": "OrderState-1.0.0",
       "useFlags": false,
       "isExtensible": true,
