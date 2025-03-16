@@ -9,7 +9,7 @@
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
-      "description": "A metering point identified as Producer",
+      "description": "A metering point identified as Consumer",
       "attributes": [
         {
           "id": "EnergyCommunity-1.0.0/EnergyConsumption-1.0.0",
@@ -24,12 +24,6 @@
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
-      "associations": [
-        {
-          "id": "EnergyCommunity-1.0.0/AssociatedFacilities-1.0.0",
-          "targetCkTypeId": "EnergyCommunity-1.0.0/OperatingFacility-1.0.0"
-        }
-      ],
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
       "description": "Customer Information",
@@ -224,8 +218,8 @@
       "isAbstract": false,
       "associations": [
         {
-          "id": "System-1.0.0/ParentChild-1.0.0",
-          "targetCkTypeId": "Basic-1.0.0/TreeNode-1.0.0"
+          "id": "EnergyCommunity-1.0.0/AssociatedCustomer-1.0.0",
+          "targetCkTypeId": "EnergyCommunity-1.0.0/Customer-1.0.0"
         },
         {
           "id": "EnergyCommunity-1.0.0/AssociatedMeters-1.0.0",
@@ -236,6 +230,11 @@
       "isStreamType": false,
       "description": "An Operating Facility",
       "attributes": [
+        {
+          "id": "EnergyCommunity-1.0.0/FacilityName-1.0.0",
+          "name": "FacilityName",
+          "isOptional": false
+        },
         {
           "id": "EnergyCommunity-1.0.0/Address-1.0.0",
           "name": "Address",
@@ -278,25 +277,18 @@
   ],
   "associationRoles": [
     {
-      "id": "AssociatedFacilities-1.0.0",
-      "inboundName": "RelatesFrom",
-      "outboundName": "RelatesTo",
-      "inboundMultiplicity": "ZeroOrOne",
-      "outboundMultiplicity": "N"
+      "id": "AssociatedCustomer-1.0.0",
+      "inboundName": "Facilities",
+      "outboundName": "Customer",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "One"
     },
     {
       "id": "AssociatedMeters-1.0.0",
-      "inboundName": "RelatesFrom",
-      "outboundName": "RelatesTo",
-      "inboundMultiplicity": "ZeroOrOne",
-      "outboundMultiplicity": "N"
-    },
-    {
-      "id": "AssociatedUser-1.0.0",
-      "inboundName": "RelatesFrom",
-      "outboundName": "RelatesTo",
+      "inboundName": "OperatingFacility",
+      "outboundName": "Meters",
       "inboundMultiplicity": "One",
-      "outboundMultiplicity": "ZeroOrOne"
+      "outboundMultiplicity": "N"
     }
   ],
   "attributes": [
@@ -374,6 +366,11 @@
           "value": "kWp"
         }
       ]
+    },
+    {
+      "id": "FacilityName-1.0.0",
+      "valueType": "String",
+      "description": "The name of the facility"
     },
     {
       "id": "FacilityState-1.0.0",
