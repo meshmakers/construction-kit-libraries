@@ -163,6 +163,14 @@
   ],
   "attributes": [
     {
+      "id": "AttributePath-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "AttributePaths-1.0.0",
+      "valueType": "StringArray"
+    },
+    {
       "id": "AutoIncrement.CurrentValue-1.0.0",
       "valueType": "Int"
     },
@@ -241,14 +249,6 @@
       "valueCkRecordId": "System-1.0.0/TextSearchFilter-1.0.0"
     },
     {
-      "id": "ReferencedAttributeName-1.0.0",
-      "valueType": "String"
-    },
-    {
-      "id": "ReferencedAttributeNames-1.0.0",
-      "valueType": "StringArray"
-    },
-    {
       "id": "SortOrder-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "System-1.0.0/SortOrders-1.0.0"
@@ -265,8 +265,8 @@
       "isAbstract": false,
       "attributes": [
         {
-          "id": "System-1.0.0/ReferencedAttributeNames-1.0.0",
-          "name": "AttributeNames",
+          "id": "System-1.0.0/AttributePaths-1.0.0",
+          "name": "AttributePaths",
           "isOptional": false
         },
         {
@@ -282,8 +282,8 @@
       "isAbstract": false,
       "attributes": [
         {
-          "id": "System-1.0.0/ReferencedAttributeName-1.0.0",
-          "name": "AttributeName",
+          "id": "System-1.0.0/AttributePath-1.0.0",
+          "name": "AttributePath",
           "isOptional": false
         },
         {
@@ -304,8 +304,8 @@
       "isAbstract": false,
       "attributes": [
         {
-          "id": "System-1.0.0/ReferencedAttributeName-1.0.0",
-          "name": "AttributeName",
+          "id": "System-1.0.0/AttributePath-1.0.0",
+          "name": "AttributePath",
           "isOptional": false
         },
         {
@@ -402,6 +402,12 @@
         },
         {
           "key": 11,
+          "name": "AnyLike",
+          "description": "Compares an array field with at least one element that matches the specified value using a pattern matching comparison. Use * as a wildcard character.",
+          "isExtension": false
+        },
+        {
+          "key": 12,
           "name": "Match",
           "description": "Matches an array field with at least one element that matches all the specified query criteria.",
           "isExtension": false
