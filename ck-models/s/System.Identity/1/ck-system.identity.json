@@ -456,6 +456,27 @@
     },
     {
       "isCollectionRoot": false,
+      "typeId": "MailNotificationConfiguration-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Configuration-1.0.0",
+      "isFinal": true,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "attributes": [
+        {
+          "id": "System.Identity-1.0.0/EnableEmailNotifications-1.0.0",
+          "name": "EnableEmailNotifications",
+          "isOptional": false
+        },
+        {
+          "id": "System.Identity-1.0.0/RedirectAfterEmailInteractionUrl-1.0.0",
+          "name": "RedirectAfterEmailInteractionUrl",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
       "typeId": "MicrosoftAdIdentityProvider-1.0.0",
       "derivedFromCkTypeId": "System.Identity-1.0.0/IdentityProvider-1.0.0",
       "isFinal": true,
@@ -616,7 +637,7 @@
         {
           "id": "System.Identity-1.0.0/SessionId-1.0.0",
           "name": "SessionId",
-          "isOptional": false
+          "isOptional": true
         },
         {
           "id": "System.Identity-1.0.0/ClientId-1.0.0",
@@ -1105,6 +1126,14 @@
       "description": "Indicates if the email address of the user has been confirmed."
     },
     {
+      "id": "EnableEmailNotifications-1.0.0",
+      "valueType": "Boolean",
+      "defaultValues": [
+        "false"
+      ],
+      "description": "Enable email notifications"
+    },
+    {
       "id": "EnableLocalLogin-1.0.0",
       "valueType": "Boolean",
       "defaultValues": [
@@ -1297,6 +1326,11 @@
     {
       "id": "ProviderKey-1.0.0",
       "valueType": "String"
+    },
+    {
+      "id": "RedirectAfterEmailInteractionUrl-1.0.0",
+      "valueType": "String",
+      "description": "Redirect after email interaction URL"
     },
     {
       "id": "RedirectUris-1.0.0",
