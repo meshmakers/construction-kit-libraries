@@ -83,15 +83,19 @@
       ]
     },
     {
-      "isCollectionRoot": false,
+      "isCollectionRoot": true,
       "typeId": "Order-1.0.0",
-      "derivedFromCkTypeId": "Basic-1.0.0/Asset-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
       "associations": [
         {
           "id": "Industry.Maintenance-1.0.0/RelatedEvent-1.0.0",
-          "targetCkTypeId": "Industry.Maintenance-1.0.0/OrderFeedback-1.0.0"
+          "targetCkTypeId": "Industry.Basic-1.0.0/Event-1.0.0"
+        },
+        {
+          "id": "Basic-1.0.0/RelatedClassification-1.0.0",
+          "targetCkTypeId": "Basic-1.0.0/TreeNode-1.0.0"
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
@@ -201,6 +205,10 @@
         {
           "id": "Industry.Maintenance-1.0.0/ReportingEmployee-1.0.0",
           "targetCkTypeId": "Industry.Maintenance-1.0.0/Employee-1.0.0"
+        },
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "Industry.Maintenance-1.0.0/Order-1.0.0"
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
@@ -252,8 +260,8 @@
       "id": "ReportingEmployee-1.0.0",
       "inboundName": "OrderFeedbacks",
       "outboundName": "Employee",
-      "inboundMultiplicity": "One",
-      "outboundMultiplicity": "N"
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "One"
     }
   ],
   "attributes": [
