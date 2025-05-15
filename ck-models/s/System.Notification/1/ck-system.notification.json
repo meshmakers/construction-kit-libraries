@@ -2,6 +2,22 @@
   "$schema": "https://schemas.meshmakers.cloud/construction-kit-compiled.schema.json",
   "types": [
     {
+      "isCollectionRoot": false,
+      "typeId": "CssTemplateConfiguration-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Configuration-1.0.0",
+      "isFinal": true,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "attributes": [
+        {
+          "id": "System.Notification-1.0.0/CssStyle-1.0.0",
+          "name": "CssStyle",
+          "isOptional": false
+        }
+      ]
+    },
+    {
       "isCollectionRoot": true,
       "typeId": "Event-1.0.0",
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
@@ -11,18 +27,18 @@
       "isStreamType": false,
       "attributes": [
         {
-          "id": "System.Notification-1.0.0/SubjectText-1.0.0",
-          "name": "SubjectText",
-          "isOptional": false
-        },
-        {
-          "id": "System.Notification-1.0.0/BodyText-1.0.0",
-          "name": "BodyText",
+          "id": "System.Notification-1.0.0/Message-1.0.0",
+          "name": "Message",
           "isOptional": true
         },
         {
           "id": "System.Notification-1.0.0/EventLevel-1.0.0",
           "name": "Level",
+          "isOptional": false
+        },
+        {
+          "id": "System.Notification-1.0.0/EventSource-1.0.0",
+          "name": "Source",
           "isOptional": false
         }
       ]
@@ -44,11 +60,16 @@
         {
           "id": "System.Notification-1.0.0/BodyTemplate-1.0.0",
           "name": "BodyTemplate",
-          "isOptional": false
+          "isOptional": true
         },
         {
           "id": "System.Notification-1.0.0/NotificationType-1.0.0",
           "name": "Type",
+          "isOptional": false
+        },
+        {
+          "id": "System.Notification-1.0.0/RenderingType-1.0.0",
+          "name": "RenderingType",
           "isOptional": false
         }
       ]
@@ -80,7 +101,12 @@
     {
       "id": "BodyText-1.0.0",
       "valueType": "String",
-      "description": "The body of the event"
+      "description": "The body text of the notification"
+    },
+    {
+      "id": "CssStyle-1.0.0",
+      "valueType": "String",
+      "description": "The css style for a rendered html text"
     },
     {
       "id": "EventLevel-1.0.0",
@@ -89,16 +115,33 @@
       "description": "Defines the level of the event (Information, Warning, Error)"
     },
     {
+      "id": "EventSource-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Notification-1.0.0/EventSources-1.0.0",
+      "description": "Defines event sources"
+    },
+    {
       "id": "EventState-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "System.Notification-1.0.0/EventStates-1.0.0",
       "description": "Defines the state of the event (Active, Inactive)"
     },
     {
+      "id": "Message-1.0.0",
+      "valueType": "String",
+      "description": "The message of the event"
+    },
+    {
       "id": "NotificationType-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "System.Notification-1.0.0/NotificationTypes-1.0.0",
       "description": "Defines the type of the notification (Email, SMS, Push)"
+    },
+    {
+      "id": "RenderingType-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System.Notification-1.0.0/RenderingTypes-1.0.0",
+      "description": "Defines the rendering type of the notification (Text, Html)"
     },
     {
       "id": "SubjectTemplate-1.0.0",
@@ -108,7 +151,7 @@
     {
       "id": "SubjectText-1.0.0",
       "valueType": "String",
-      "description": "The subject of the event"
+      "description": "The subject text of the notification"
     }
   ],
   "records": [],
@@ -120,20 +163,86 @@
       "values": [
         {
           "key": 0,
-          "name": "Information",
+          "name": "Debug",
+          "description": "Debug",
           "isExtension": false
         },
         {
           "key": 1,
-          "name": "Warning",
+          "name": "Information",
+          "description": "Information",
           "isExtension": false
         },
         {
           "key": 2,
+          "name": "Warning",
+          "description": "Warning",
+          "isExtension": false
+        },
+        {
+          "key": 3,
           "name": "Error",
+          "description": "Error",
+          "isExtension": false
+        },
+        {
+          "key": 4,
+          "name": "Critical",
+          "description": "Critical",
           "isExtension": false
         }
-      ]
+      ],
+      "description": "Defines the level of the event (Information, Warning, Error)"
+    },
+    {
+      "enumId": "EventSources-1.0.0",
+      "useFlags": false,
+      "isExtensible": true,
+      "values": [
+        {
+          "key": 0,
+          "name": "Undefined",
+          "description": "No source has been assigned to the event.",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "IdentityService",
+          "description": "The event was generated by the Identity Service.",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "BotService",
+          "description": "The event was generated by the Bot Service.",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "CommunicationService",
+          "description": "The event was generated by the Communication Service.",
+          "isExtension": false
+        },
+        {
+          "key": 4,
+          "name": "AssetRepositoryService",
+          "description": "The event was generated by the Asset Repository Service.",
+          "isExtension": false
+        },
+        {
+          "key": 5,
+          "name": "MeshAdapter",
+          "description": "The event was generated by the Mesh Adapter.",
+          "isExtension": false
+        },
+        {
+          "key": 6,
+          "name": "AdminPanel",
+          "description": "The event was generated by the Admin Panel.",
+          "isExtension": false
+        }
+      ],
+      "description": "The source of an event is the entity that is responsible for the event."
     },
     {
       "enumId": "EventStates-1.0.0",
@@ -175,6 +284,23 @@
         {
           "key": 3,
           "name": "Push",
+          "isExtension": false
+        }
+      ]
+    },
+    {
+      "enumId": "RenderingTypes-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Plain",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Html",
           "isExtension": false
         }
       ]
