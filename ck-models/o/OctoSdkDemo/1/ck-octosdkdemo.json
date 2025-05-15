@@ -117,10 +117,10 @@
   "associationRoles": [
     {
       "id": "Ownership-1.0.0",
-      "inboundName": "OwnedBy",
-      "outboundName": "Owns",
-      "inboundMultiplicity": "N",
-      "outboundMultiplicity": "ZeroOrOne"
+      "inboundName": "Owns",
+      "outboundName": "OwnedBy",
+      "inboundMultiplicity": "ZeroOrOne",
+      "outboundMultiplicity": "N"
     }
   ],
   "attributes": [
