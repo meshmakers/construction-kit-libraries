@@ -52,6 +52,28 @@
     },
     {
       "isCollectionRoot": true,
+      "typeId": "Document-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": false,
+      "isAbstract": true,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "A document that can be used in the system.",
+      "attributes": [
+        {
+          "id": "Basic-1.0.0/DocumentNumber-1.0.0",
+          "name": "DocumentNumber",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/DocumentDate-1.0.0",
+          "name": "DocumentDate",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
       "typeId": "NamedEntity-1.0.0",
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
@@ -119,6 +141,27 @@
     }
   ],
   "attributes": [
+    {
+      "id": "AcademicTitlePrefix-1.0.0",
+      "valueType": "String",
+      "description": "Academic title prefix associated with the contact"
+    },
+    {
+      "id": "AcademicTitleSuffix-1.0.0",
+      "valueType": "String",
+      "description": "Academic title suffix associated with the contact"
+    },
+    {
+      "id": "AccountHolder-1.0.0",
+      "valueType": "String",
+      "description": "Name of the account holder"
+    },
+    {
+      "id": "Address-1.0.0",
+      "valueType": "Record",
+      "valueCkRecordId": "Basic-1.0.0/Address-1.0.0",
+      "description": "Record containing address information"
+    },
     {
       "id": "AddressCityTown-1.0.0",
       "valueType": "String",
@@ -291,6 +334,48 @@
       ]
     },
     {
+      "id": "BankAccount-1.0.0",
+      "valueType": "Record",
+      "valueCkRecordId": "Basic-1.0.0/BankAccount-1.0.0",
+      "description": "Bank account information"
+    },
+    {
+      "id": "BankName-1.0.0",
+      "valueType": "String",
+      "description": "Name of the bank"
+    },
+    {
+      "id": "Comment-1.0.0",
+      "valueType": "String",
+      "description": "Optional Comment on the user"
+    },
+    {
+      "id": "CompanyName-1.0.0",
+      "valueType": "String",
+      "description": "Associated company name"
+    },
+    {
+      "id": "CompanyRegisterNumber-1.0.0",
+      "valueType": "String",
+      "description": "Public registry number for the legal identification of the company"
+    },
+    {
+      "id": "Contact-1.0.0",
+      "valueType": "Record",
+      "valueCkRecordId": "Basic-1.0.0/Contact-1.0.0",
+      "description": "Contact data with name and address"
+    },
+    {
+      "id": "DocumentDate-1.0.0",
+      "valueType": "DateTime",
+      "description": "Date of a document"
+    },
+    {
+      "id": "DocumentNumber-1.0.0",
+      "valueType": "String",
+      "description": "Identifying number of a document"
+    },
+    {
       "id": "EMailAddress-1.0.0",
       "valueType": "String",
       "metaData": [
@@ -338,6 +423,26 @@
     {
       "id": "File-1.0.0",
       "valueType": "BinaryLinked"
+    },
+    {
+      "id": "FirstName-1.0.0",
+      "valueType": "String",
+      "description": "The users first name(s)"
+    },
+    {
+      "id": "From-1.0.0",
+      "valueType": "DateTime",
+      "description": "From date within a time range"
+    },
+    {
+      "id": "Iban-1.0.0",
+      "valueType": "String",
+      "description": "International Bank Account Number"
+    },
+    {
+      "id": "LastName-1.0.0",
+      "valueType": "String",
+      "description": "The users last name(s)"
     },
     {
       "id": "MaxTemperature-1.0.0",
@@ -465,6 +570,27 @@
       ]
     },
     {
+      "id": "Quantity-1.0.0",
+      "valueType": "Double",
+      "description": "Defines the quantity of a resource"
+    },
+    {
+      "id": "Salutation-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Basic-1.0.0/Salutation-1.0.0",
+      "description": "Salutation associated with the contact"
+    },
+    {
+      "id": "SwiftCode-1.0.0",
+      "valueType": "String",
+      "description": "Bank Identifier Code"
+    },
+    {
+      "id": "TaxIdentificationNumber-1.0.0",
+      "valueType": "String",
+      "description": "Tax identification number of a entity"
+    },
+    {
       "id": "TelephoneNumber-1.0.0",
       "valueType": "String",
       "metaData": [
@@ -492,6 +618,17 @@
     {
       "id": "Time-1.0.0",
       "valueType": "DateTime"
+    },
+    {
+      "id": "TimeRange-1.0.0",
+      "valueType": "Record",
+      "valueCkRecordId": "Basic-1.0.0/TimeRange-1.0.0",
+      "description": "A time range with a start and end date"
+    },
+    {
+      "id": "To-1.0.0",
+      "valueType": "DateTime",
+      "description": "To date within a time range"
     },
     {
       "id": "TypeOfTelephoneBasic-1.0.0",
@@ -592,6 +729,91 @@
         {
           "id": "Basic-1.0.0/AddressEMail-1.0.0",
           "name": "EMail",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "recordId": "BankAccount-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "description": "A bank account with its details",
+      "attributes": [
+        {
+          "id": "Basic-1.0.0/Iban-1.0.0",
+          "name": "Iban",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/SwiftCode-1.0.0",
+          "name": "SwiftCode",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/BankName-1.0.0",
+          "name": "BankName",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/AccountHolder-1.0.0",
+          "name": "AccountHolder",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "recordId": "Contact-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "attributes": [
+        {
+          "id": "Basic-1.0.0/Salutation-1.0.0",
+          "name": "Salutation",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/FirstName-1.0.0",
+          "name": "FirstName",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/LastName-1.0.0",
+          "name": "LastName",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/AcademicTitlePrefix-1.0.0",
+          "name": "TitlePrefix",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/AcademicTitleSuffix-1.0.0",
+          "name": "TitleSuffix",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/CompanyName-1.0.0",
+          "name": "CompanyName",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/Address-1.0.0",
+          "name": "Address",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/TaxIdentificationNumber-1.0.0",
+          "name": "TaxIdentificationNumber",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/CompanyRegisterNumber-1.0.0",
+          "name": "CompanyRegisterNumber",
+          "isOptional": true
+        },
+        {
+          "id": "Basic-1.0.0/EMailAddress-1.0.0",
+          "name": "Email",
           "isOptional": true
         }
       ]
@@ -725,9 +947,59 @@
           "isOptional": true
         }
       ]
+    },
+    {
+      "recordId": "TimeRange-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "description": "A time range with a start and end date",
+      "attributes": [
+        {
+          "id": "Basic-1.0.0/From-1.0.0",
+          "name": "From",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/To-1.0.0",
+          "name": "To",
+          "isOptional": false
+        }
+      ]
     }
   ],
   "enums": [
+    {
+      "enumId": "Salutation-1.0.0",
+      "useFlags": false,
+      "isExtensible": true,
+      "values": [
+        {
+          "key": 0,
+          "name": "Unknown",
+          "description": "The salutation is unknown or not defined",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Male",
+          "description": "The salutation is male",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "Female",
+          "description": "The salutation is female",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "NonBinary",
+          "description": "The salutation is non-binary",
+          "isExtension": false
+        }
+      ],
+      "description": "Defines the salutation a Customer wishes to be addressed by"
+    },
     {
       "enumId": "TypeOfTelephoneBasic-1.0.0",
       "useFlags": false,
