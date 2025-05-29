@@ -59,6 +59,11 @@
           "isOptional": false
         },
         {
+          "id": "System-1.0.0/Query.Types-1.0.0",
+          "name": "QueryType",
+          "isOptional": false
+        },
+        {
           "id": "System-1.0.0/Query.Columns-1.0.0",
           "name": "Columns",
           "isOptional": false
@@ -101,7 +106,7 @@
           "indexType": "Ascending",
           "fields": [
             {
-              "attributeNames": [
+              "attributePaths": [
                 "TenantId"
               ]
             }
@@ -247,6 +252,14 @@
       "id": "Query.TextSearchFilter-1.0.0",
       "valueType": "Record",
       "valueCkRecordId": "System-1.0.0/TextSearchFilter-1.0.0"
+    },
+    {
+      "id": "Query.Types-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System-1.0.0/QueryTypes-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
     },
     {
       "id": "SortOrder-1.0.0",
@@ -414,6 +427,26 @@
         }
       ],
       "description": "The operator to use for filtering fields."
+    },
+    {
+      "enumId": "QueryTypes-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Flat",
+          "description": "A flat query",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Tree",
+          "description": "A tree query that returns results from a tree",
+          "isExtension": false
+        }
+      ],
+      "description": "The type of query"
     },
     {
       "enumId": "SortOrders-1.0.0",
