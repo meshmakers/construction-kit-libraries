@@ -7,6 +7,53 @@
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
+      "indexes": [
+        {
+          "indexType": "Ascending",
+          "fields": [
+            {
+              "attributePaths": [
+                "FirstName",
+                "LastName",
+                "CompanyName",
+                "Street",
+                "City",
+                "EMailAddress"
+              ]
+            }
+          ]
+        },
+        {
+          "indexType": "Text",
+          "language": "en",
+          "fields": [
+            {
+              "weight": 1,
+              "attributePaths": [
+                "FirstName",
+                "Street",
+                "City",
+                "EMailAddress"
+              ]
+            }
+          ]
+        },
+        {
+          "indexType": "Text",
+          "language": "en",
+          "fields": [
+            {
+              "weight": 2,
+              "attributePaths": [
+                "FirstName",
+                "LastName",
+                "CompanyName",
+                "EMailAddress"
+              ]
+            }
+          ]
+        }
+      ],
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
       "attributes": [
@@ -73,6 +120,18 @@
       "derivedFromCkTypeId": "Basic-1.0.0/Asset-1.0.0",
       "isFinal": false,
       "isAbstract": false,
+      "indexes": [
+        {
+          "indexType": "Ascending",
+          "fields": [
+            {
+              "attributePaths": [
+                "MeteringPointNumber"
+              ]
+            }
+          ]
+        }
+      ],
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
       "attributes": [
