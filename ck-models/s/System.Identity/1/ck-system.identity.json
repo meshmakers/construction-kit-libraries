@@ -759,7 +759,7 @@
           "indexType": "Ascending",
           "fields": [
             {
-              "attributeNames": [
+              "attributePaths": [
                 "NormalizedEmail",
                 "NormalizedUserName"
               ]
