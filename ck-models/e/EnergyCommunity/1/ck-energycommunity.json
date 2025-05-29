@@ -3,18 +3,128 @@
   "types": [
     {
       "isCollectionRoot": false,
+      "typeId": "BillingDocument-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/Document-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "EnergyCommunity-1.0.0/AssignedBilling-1.0.0",
+          "targetCkTypeId": "EnergyCommunity-1.0.0/Customer-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "A billing document entity that contains accounting information.",
+      "attributes": [
+        {
+          "id": "EnergyCommunity-1.0.0/CustomerNumber-1.0.0",
+          "name": "CustomerNumber",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/Contact-1.0.0",
+          "name": "Contact",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/TimeRange-1.0.0",
+          "name": "TimeRange",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/Comment-1.0.0",
+          "name": "Comment",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/BillingType-1.0.0",
+          "name": "BillingType",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/BillingDocumentState-1.0.0",
+          "name": "BillingDocumentState",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/GrossTotal-1.0.0",
+          "name": "GrossTotal",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/BankAccount-1.0.0",
+          "name": "BankAccount",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "BillingDocumentLineItem-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "System-1.0.0/ParentChild-1.0.0",
+          "targetCkTypeId": "EnergyCommunity-1.0.0/BillingDocument-1.0.0"
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/AssignedBilling-1.0.0",
+          "targetCkTypeId": "EnergyCommunity-1.0.0/EnergyQuantity-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "An billing document line item",
+      "attributes": [
+        {
+          "id": "EnergyCommunity-1.0.0/GrossAmount-1.0.0",
+          "name": "GrossAmount",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/NetAmount-1.0.0",
+          "name": "NetAmount",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/TaxAmount-1.0.0",
+          "name": "TaxAmount",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/TaxRate-1.0.0",
+          "name": "TaxRate",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/UnitPrice-1.0.0",
+          "name": "UnitPrice",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/BillingType-1.0.0",
+          "name": "BillingType",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
       "typeId": "Consumer-1.0.0",
       "derivedFromCkTypeId": "EnergyCommunity-1.0.0/MeteringPoint-1.0.0",
       "isFinal": false,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
-      "description": "A metering point identified as Consumer",
+      "description": "A metering point identified as consumer metering point",
       "attributes": [
         {
           "id": "EnergyCommunity-1.0.0/EnergyConsumption-1.0.0",
           "name": "EnergyConsumption",
-          "isOptional": false
+          "isOptional": true
         }
       ]
     },
@@ -26,72 +136,37 @@
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
-      "description": "Customer Information",
+      "description": "Represents a customer of an energy community",
       "attributes": [
-        {
-          "id": "EnergyCommunity-1.0.0/Salutation-1.0.0",
-          "name": "Salutation",
-          "isOptional": true
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/FirstName-1.0.0",
-          "name": "FirstName",
-          "isOptional": false
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/LastName-1.0.0",
-          "name": "LastName",
-          "isOptional": false
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/Title-1.0.0",
-          "name": "Title",
-          "isOptional": true
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/CompanyName-1.0.0",
-          "name": "CompanyName",
-          "isOptional": true
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/Address-1.0.0",
-          "name": "Address",
-          "isOptional": false
-        },
         {
           "id": "EnergyCommunity-1.0.0/CustomerNumber-1.0.0",
           "name": "CustomerNumber",
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/CustomerUid-1.0.0",
-          "name": "CustomerUid",
-          "isOptional": true
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/CompanyRegisterNumber-1.0.0",
-          "name": "CompanyRegisterNumber",
-          "isOptional": true
-        },
-        {
-          "id": "Basic-1.0.0/EMailAddress-1.0.0",
-          "name": "AuthenticationEmail",
+          "id": "Basic-1.0.0/Contact-1.0.0",
+          "name": "Contact",
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/Comment-1.0.0",
+          "id": "Basic-1.0.0/Comment-1.0.0",
           "name": "Comment",
           "isOptional": true
         },
         {
-          "id": "EnergyCommunity-1.0.0/InvoiceCycleCustomer-1.0.0",
-          "name": "InvoiceCycle",
+          "id": "EnergyCommunity-1.0.0/BillingCycle-1.0.0",
+          "name": "BillingCycle",
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/CustomerState-1.0.0",
+          "id": "EnergyCommunity-1.0.0/State-1.0.0",
           "name": "State",
           "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/BankAccount-1.0.0",
+          "name": "BankAccount",
+          "isOptional": true
         }
       ]
     },
@@ -119,56 +194,33 @@
     },
     {
       "isCollectionRoot": true,
-      "typeId": "Invoice-1.0.0",
+      "typeId": "EnergyQuantity-1.0.0",
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
       "isAbstract": false,
       "associations": [
         {
           "id": "System-1.0.0/ParentChild-1.0.0",
-          "targetCkTypeId": "EnergyCommunity-1.0.0/InvoicePeriod-1.0.0"
+          "targetCkTypeId": "EnergyCommunity-1.0.0/MeteringPoint-1.0.0"
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
-      "description": "An invoice period",
+      "description": "Describes a quantity of energy, such as consumption or production.",
       "attributes": [
         {
-          "id": "EnergyCommunity-1.0.0/InvoiceNumber-1.0.0",
-          "name": "InvoiceNumber",
+          "id": "Basic-1.0.0/TimeRange-1.0.0",
+          "name": "TimeRange",
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/InvoiceStatus-1.0.0",
-          "name": "InvoiceStatus",
-          "isOptional": false
-        }
-      ]
-    },
-    {
-      "isCollectionRoot": true,
-      "typeId": "InvoicePeriod-1.0.0",
-      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
-      "isFinal": false,
-      "isAbstract": false,
-      "associations": [
-        {
-          "id": "System-1.0.0/ParentChild-1.0.0",
-          "targetCkTypeId": "EnergyCommunity-1.0.0/Customer-1.0.0"
-        }
-      ],
-      "enableChangeStreamPreAndPostImages": false,
-      "isStreamType": false,
-      "description": "An invoice period",
-      "attributes": [
-        {
-          "id": "EnergyCommunity-1.0.0/StartDate-1.0.0",
-          "name": "StartDate",
+          "id": "Basic-1.0.0/Quantity-1.0.0",
+          "name": "Quantity",
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/EndDate-1.0.0",
-          "name": "EndDate",
+          "id": "EnergyCommunity-1.0.0/DataQuality-1.0.0",
+          "name": "DataQuality",
           "isOptional": false
         }
       ]
@@ -178,7 +230,7 @@
       "typeId": "MeteringPoint-1.0.0",
       "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
       "isFinal": false,
-      "isAbstract": false,
+      "isAbstract": true,
       "associations": [
         {
           "id": "System-1.0.0/ParentChild-1.0.0",
@@ -195,24 +247,9 @@
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/MeterReading-1.0.0",
-          "name": "MeterReading",
-          "isOptional": true
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/Timestamp-1.0.0",
-          "name": "Timestamp",
-          "isOptional": true
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/MeterState-1.0.0",
+          "id": "EnergyCommunity-1.0.0/State-1.0.0",
           "name": "State",
           "isOptional": false
-        },
-        {
-          "id": "EnergyCommunity-1.0.0/DataQuality-1.0.0",
-          "name": "DataQuality",
-          "isOptional": true
         }
       ]
     },
@@ -233,7 +270,7 @@
       "description": "An Operating Facility",
       "attributes": [
         {
-          "id": "EnergyCommunity-1.0.0/Address-1.0.0",
+          "id": "Basic-1.0.0/Address-1.0.0",
           "name": "Address",
           "isOptional": false
         },
@@ -243,7 +280,7 @@
           "isOptional": false
         },
         {
-          "id": "EnergyCommunity-1.0.0/FacilityState-1.0.0",
+          "id": "EnergyCommunity-1.0.0/State-1.0.0",
           "name": "State",
           "isOptional": false
         }
@@ -257,12 +294,12 @@
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
-      "description": "A metering point identified as Producer",
+      "description": "A metering point identified as producer metering point",
       "attributes": [
         {
           "id": "EnergyCommunity-1.0.0/EnergyProductionCapacity-1.0.0",
           "name": "EnergyProductionCapacity",
-          "isOptional": false
+          "isOptional": true
         },
         {
           "id": "EnergyCommunity-1.0.0/ProductionType-1.0.0",
@@ -274,41 +311,50 @@
   ],
   "associationRoles": [
     {
+      "id": "AssignedBilling-1.0.0",
+      "inboundName": "Billing",
+      "outboundName": "AssignedTo",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "ZeroOrOne",
+      "description": "A billing document or line item associated with data source."
+    },
+    {
       "id": "AssociatedCustomer-1.0.0",
       "inboundName": "Facilities",
       "outboundName": "Customer",
       "inboundMultiplicity": "N",
-      "outboundMultiplicity": "One"
+      "outboundMultiplicity": "One",
+      "description": "The customer associated with the operating facilities."
     },
     {
-      "id": "AssociatedMeters-1.0.0",
-      "inboundName": "OperatingFacility",
-      "outboundName": "Meters",
-      "inboundMultiplicity": "One",
-      "outboundMultiplicity": "N"
+      "id": "ParentChild-1.0.0",
+      "inboundName": "Children",
+      "outboundName": "Parent",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "One"
     }
   ],
   "attributes": [
     {
-      "id": "Address-1.0.0",
-      "valueType": "Record",
-      "valueCkRecordId": "Basic-1.0.0/Address-1.0.0",
-      "description": "Address associated with the customer"
+      "id": "BillingCycle-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "EnergyCommunity-1.0.0/BillingCycle-1.0.0",
+      "defaultValues": [
+        "1"
+      ],
+      "description": "Billing cycle associated with the customer"
     },
     {
-      "id": "Comment-1.0.0",
-      "valueType": "String",
-      "description": "Optional Comment on the user"
+      "id": "BillingDocumentState-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "EnergyCommunity-1.0.0/BillingDocumentState-1.0.0",
+      "description": "The state of the billing document"
     },
     {
-      "id": "CompanyName-1.0.0",
-      "valueType": "String",
-      "description": "The company\u0027s name"
-    },
-    {
-      "id": "CompanyRegisterNumber-1.0.0",
-      "valueType": "String",
-      "description": "Public registry number for the legal identification of the company"
+      "id": "BillingType-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "EnergyCommunity-1.0.0/BillingType-1.0.0",
+      "description": "The type of the billing document or billing item"
     },
     {
       "id": "Currency-1.0.0",
@@ -321,27 +367,11 @@
       "description": "Internal customer number"
     },
     {
-      "id": "CustomerState-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/State-1.0.0",
-      "description": "The state of the customer object"
-    },
-    {
-      "id": "CustomerUid-1.0.0",
-      "valueType": "String",
-      "description": "Customer user identification"
-    },
-    {
       "id": "DataQuality-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "EnergyCommunity-1.0.0/DataQuality-1.0.0",
       "description": "The quality of the received data",
       "isDataStream": true
-    },
-    {
-      "id": "EndDate-1.0.0",
-      "valueType": "DateTime",
-      "description": "Ending time of the invoice period"
     },
     {
       "id": "EnergyConsumption-1.0.0",
@@ -371,65 +401,29 @@
       "description": "The name of the facility"
     },
     {
-      "id": "FacilityState-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/State-1.0.0",
-      "description": "The state of the facility object"
-    },
-    {
       "id": "FacilityType-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "EnergyCommunity-1.0.0/FacilityType-1.0.0"
     },
     {
-      "id": "FirstName-1.0.0",
-      "valueType": "String",
-      "description": "The users first name(s)"
+      "id": "GrossAmount-1.0.0",
+      "valueType": "Double",
+      "description": "The gross amount of the billing document"
     },
     {
-      "id": "InvoiceCycleCustomer-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/InvoiceCycle-1.0.0",
-      "description": "Invoice cycle associated with the customer"
-    },
-    {
-      "id": "InvoiceNumber-1.0.0",
-      "valueType": "String",
-      "description": "Identifying number of the invoice"
-    },
-    {
-      "id": "InvoiceStatus-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/InvoiceStatus-1.0.0",
-      "description": "The status of the invoice"
-    },
-    {
-      "id": "LastName-1.0.0",
-      "valueType": "String",
-      "description": "The users last name(s)"
-    },
-    {
-      "id": "MeterReading-1.0.0",
-      "valueType": "Int",
-      "description": "Reading of the meter at a given point in kWh",
-      "metaData": [
-        {
-          "key": "Unit",
-          "value": "kWh"
-        }
-      ],
-      "isDataStream": true
-    },
-    {
-      "id": "MeterState-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/State-1.0.0",
-      "description": "The state of the metering point object"
+      "id": "GrossTotal-1.0.0",
+      "valueType": "Double",
+      "description": "The gross total of the billing document"
     },
     {
       "id": "MeteringPointNumber-1.0.0",
       "valueType": "String",
       "description": "Number identifying the metering point"
+    },
+    {
+      "id": "NetAmount-1.0.0",
+      "valueType": "Double",
+      "description": "The net amount of the billing document"
     },
     {
       "id": "Price-1.0.0",
@@ -442,31 +436,116 @@
       "valueCkEnumId": "EnergyCommunity-1.0.0/ProductionType-1.0.0"
     },
     {
-      "id": "Salutation-1.0.0",
+      "id": "State-1.0.0",
       "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/Salutation-1.0.0",
-      "description": "Salutation associated with the customer"
+      "valueCkEnumId": "EnergyCommunity-1.0.0/State-1.0.0",
+      "defaultValues": [
+        "1"
+      ],
+      "description": "The state of an object"
     },
     {
-      "id": "StartDate-1.0.0",
-      "valueType": "DateTime",
-      "description": "Starting time of the invoice period"
+      "id": "TaxAmount-1.0.0",
+      "valueType": "Double",
+      "description": "The tax amount of the billing document"
     },
     {
-      "id": "Timestamp-1.0.0",
-      "valueType": "DateTime",
-      "description": "Timestamp associated with the meter reading",
-      "isDataStream": true
+      "id": "TaxRate-1.0.0",
+      "valueType": "Double",
+      "description": "The tax rate of the billing document"
     },
     {
-      "id": "Title-1.0.0",
-      "valueType": "Enum",
-      "valueCkEnumId": "EnergyCommunity-1.0.0/Title-1.0.0",
-      "description": "Title associated with the customer"
+      "id": "UnitPrice-1.0.0",
+      "valueType": "Double",
+      "description": "The unit price of the billing document"
     }
   ],
   "records": [],
   "enums": [
+    {
+      "enumId": "BillingCycle-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Monthly",
+          "description": "The billing cycle is one month",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Quarterly",
+          "description": "The billing cycle is one quarter",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "SemiAnnually",
+          "description": "The billing cycle is six months",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "Annually",
+          "description": "The billing cycle is one year",
+          "isExtension": false
+        }
+      ],
+      "description": "Defines the billing cycle"
+    },
+    {
+      "enumId": "BillingDocumentState-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Draft",
+          "description": "The billing document is a draft",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Completed",
+          "description": "The billing document is completed",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "Sent",
+          "description": "The billing document has been sent",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "Paid",
+          "description": "The billing document has been paid",
+          "isExtension": false
+        }
+      ],
+      "description": "Defines the billing state"
+    },
+    {
+      "enumId": "BillingType-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Debit",
+          "description": "The document is an invoice or the item is a debit note",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Credit",
+          "description": "The document or item is an credit note or credit",
+          "isExtension": false
+        }
+      ],
+      "description": "The type a billing document or item"
+    },
     {
       "enumId": "DataQuality-1.0.0",
       "useFlags": false,
@@ -544,64 +623,6 @@
       "description": "Defines the type of Facility that holds the metering points"
     },
     {
-      "enumId": "InvoiceCycle-1.0.0",
-      "useFlags": false,
-      "isExtensible": false,
-      "values": [
-        {
-          "key": 0,
-          "name": "Monthly",
-          "description": "The Invoice Cycle is 1 Month",
-          "isExtension": false
-        },
-        {
-          "key": 1,
-          "name": "Quarterly",
-          "description": "The Invoice Cycle is 1 Quarter",
-          "isExtension": false
-        },
-        {
-          "key": 2,
-          "name": "SemiAnnually",
-          "description": "The Invoice Cycle is 6 Months",
-          "isExtension": false
-        },
-        {
-          "key": 3,
-          "name": "Annually",
-          "description": "The Invoice Cycle is 1 Year",
-          "isExtension": false
-        }
-      ],
-      "description": "Defines the billing Cycle"
-    },
-    {
-      "enumId": "InvoiceStatus-1.0.0",
-      "useFlags": false,
-      "isExtensible": false,
-      "values": [
-        {
-          "key": 0,
-          "name": "Draft",
-          "description": "The Invoice is a draft",
-          "isExtension": false
-        },
-        {
-          "key": 1,
-          "name": "Completed",
-          "description": "The Invoice is completed",
-          "isExtension": false
-        },
-        {
-          "key": 2,
-          "name": "Sent",
-          "description": "The Invoice Chas been sent",
-          "isExtension": false
-        }
-      ],
-      "description": "Defines the invoice status"
-    },
-    {
       "enumId": "ProductionType-1.0.0",
       "useFlags": false,
       "isExtensible": false,
@@ -646,38 +667,6 @@
       "description": "Defines what method is used to produce the energy"
     },
     {
-      "enumId": "Salutation-1.0.0",
-      "useFlags": false,
-      "isExtensible": true,
-      "values": [
-        {
-          "key": 0,
-          "name": "Unknown",
-          "description": "The salutation is unknown or not defined",
-          "isExtension": false
-        },
-        {
-          "key": 1,
-          "name": "Male",
-          "description": "The salutation is male",
-          "isExtension": false
-        },
-        {
-          "key": 2,
-          "name": "Female",
-          "description": "The salutation is female",
-          "isExtension": false
-        },
-        {
-          "key": 3,
-          "name": "NonBinary",
-          "description": "The salutation is non-binary",
-          "isExtension": false
-        }
-      ],
-      "description": "Defines the salutation a Customer wishes to be addressed by"
-    },
-    {
       "enumId": "State-1.0.0",
       "useFlags": false,
       "isExtensible": false,
@@ -708,32 +697,6 @@
         }
       ],
       "description": "Defines the state of the object"
-    },
-    {
-      "enumId": "Title-1.0.0",
-      "useFlags": false,
-      "isExtensible": true,
-      "values": [
-        {
-          "key": 0,
-          "name": "Unknown",
-          "description": "The title of the individual is none or unknown",
-          "isExtension": false
-        },
-        {
-          "key": 1,
-          "name": "Dr",
-          "description": "The title of the individual is Doctor",
-          "isExtension": false
-        },
-        {
-          "key": 2,
-          "name": "Prof",
-          "description": "The title of the individual is Professor",
-          "isExtension": false
-        }
-      ],
-      "description": "The academic title of an individual"
     }
   ],
   "dependencies": [
