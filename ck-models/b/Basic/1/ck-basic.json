@@ -63,6 +63,7 @@
         {
           "id": "Basic-1.0.0/DocumentNumber-1.0.0",
           "name": "DocumentNumber",
+          "autoIncrementReference": "BillingDocumentDocumentNumber",
           "isOptional": false
         },
         {
@@ -445,6 +446,15 @@
       "description": "The users last name(s)"
     },
     {
+      "id": "LegalEntityType-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "Basic-1.0.0/LegalEntityType-1.0.0",
+      "defaultValues": [
+        "0"
+      ],
+      "description": "The legal entity type of the contact"
+    },
+    {
       "id": "MaxTemperature-1.0.0",
       "valueType": "Double",
       "metaData": [
@@ -767,6 +777,11 @@
       "isAbstract": false,
       "attributes": [
         {
+          "id": "Basic-1.0.0/LegalEntityType-1.0.0",
+          "name": "LegalEntityType",
+          "isOptional": false
+        },
+        {
           "id": "Basic-1.0.0/Salutation-1.0.0",
           "name": "Salutation",
           "isOptional": true
@@ -968,6 +983,38 @@
     }
   ],
   "enums": [
+    {
+      "enumId": "LegalEntityType-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "NaturalPerson",
+          "description": "A natural person is a human being with legal capacity, in contrast to a legal person (such as a company, organization, or government entity).",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "LegalPerson",
+          "description": "Legal structure with the characteristics of a person",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "Company",
+          "description": "Actor in economic life, such as any natural or legal person with UGB relevance.",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "LocalAuthority",
+          "description": "Administrative unit with sovereign power such as municipality, federal state, republic.",
+          "isExtension": false
+        }
+      ],
+      "description": "The legal entity type of a contact"
+    },
     {
       "enumId": "Salutation-1.0.0",
       "useFlags": false,
