@@ -5,25 +5,25 @@
       "isCollectionRoot": true,
       "typeId": "AutoIncrement-1.0.0",
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
-      "isFinal": false,
+      "isFinal": true,
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
       "attributes": [
-        {
-          "id": "System-1.0.0/AutoIncrement.Start-1.0.0",
-          "name": "Start",
-          "isOptional": false
-        },
         {
           "id": "System-1.0.0/AutoIncrement.End-1.0.0",
           "name": "End",
           "isOptional": false
         },
         {
+          "id": "System-1.0.0/AutoIncrement.Format-1.0.0",
+          "name": "Format",
+          "isOptional": true
+        },
+        {
           "id": "System-1.0.0/AutoIncrement.CurrentValue-1.0.0",
           "name": "CurrentValue",
-          "isOptional": true
+          "isOptional": false
         }
       ]
     },
@@ -41,6 +41,12 @@
       "typeId": "Entity-1.0.0",
       "isFinal": false,
       "isAbstract": true,
+      "associations": [
+        {
+          "id": "System-1.0.0/Related-1.0.0",
+          "targetCkTypeId": "System-1.0.0/Entity-1.0.0"
+        }
+      ],
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false
     },
@@ -184,8 +190,8 @@
       "valueType": "Int"
     },
     {
-      "id": "AutoIncrement.Start-1.0.0",
-      "valueType": "Int"
+      "id": "AutoIncrement.Format-1.0.0",
+      "valueType": "String"
     },
     {
       "id": "ComparisonValue-1.0.0",
