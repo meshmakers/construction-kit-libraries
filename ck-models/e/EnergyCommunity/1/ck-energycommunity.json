@@ -38,6 +38,11 @@
           "isOptional": true
         },
         {
+          "id": "EnergyCommunity-1.0.0/TaxProcedureCreditNote-1.0.0",
+          "name": "TaxProcedureCreditNote",
+          "isOptional": false
+        },
+        {
           "id": "EnergyCommunity-1.0.0/BillingType-1.0.0",
           "name": "BillingType",
           "isOptional": false
@@ -141,6 +146,7 @@
         {
           "id": "EnergyCommunity-1.0.0/CustomerNumber-1.0.0",
           "name": "CustomerNumber",
+          "autoIncrementReference": "CustomerNumber",
           "isOptional": false
         },
         {
@@ -167,6 +173,11 @@
           "id": "Basic-1.0.0/BankAccount-1.0.0",
           "name": "BankAccount",
           "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/TaxProcedureCreditNote-1.0.0",
+          "name": "TaxProcedureCreditNote",
+          "isOptional": false
         }
       ]
     },
@@ -325,13 +336,6 @@
       "inboundMultiplicity": "N",
       "outboundMultiplicity": "One",
       "description": "The customer associated with the operating facilities."
-    },
-    {
-      "id": "ParentChild-1.0.0",
-      "inboundName": "Children",
-      "outboundName": "Parent",
-      "inboundMultiplicity": "N",
-      "outboundMultiplicity": "One"
     }
   ],
   "attributes": [
@@ -450,6 +454,12 @@
       "description": "The tax amount of the billing document"
     },
     {
+      "id": "TaxProcedureCreditNote-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "EnergyCommunity-1.0.0/TaxProcedureCreditNote-1.0.0",
+      "description": "The tax procedure credit notes associated with the billing document"
+    },
+    {
       "id": "TaxRate-1.0.0",
       "valueType": "Double",
       "description": "The tax rate of the billing document"
@@ -507,8 +517,8 @@
         },
         {
           "key": 1,
-          "name": "Completed",
-          "description": "The billing document is completed",
+          "name": "Released",
+          "description": "The billing document is released",
           "isExtension": false
         },
         {
@@ -697,6 +707,38 @@
         }
       ],
       "description": "Defines the state of the object"
+    },
+    {
+      "enumId": "TaxProcedureCreditNote-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "SmallBusinessOwners",
+          "description": "No tax procedure is applied for small business owners",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "ReverseCharge",
+          "description": "The reverse charge procedure is applied",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "NoTaxProcedure",
+          "description": "No tax procedure is applied",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "FarmerTaxProcedure",
+          "description": "The farmer tax procedure is applied, which is a reduced tax amount for farmers",
+          "isExtension": false
+        }
+      ],
+      "description": "Defines the tax procedure credit notes for a billing document or customer"
     }
   ],
   "dependencies": [
