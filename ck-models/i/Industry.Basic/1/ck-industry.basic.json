@@ -185,6 +185,9 @@
       "id": "MachineState-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "Industry.Basic-1.0.0/MachineState-1.0.0",
+      "defaultValues": [
+        "2"
+      ],
       "isDataStream": true
     },
     {
