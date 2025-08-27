@@ -183,6 +183,163 @@
     },
     {
       "isCollectionRoot": true,
+      "typeId": "EdaMessage-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "associations": [
+        {
+          "id": "EnergyCommunity-1.0.0/MessageToProcess-1.0.0",
+          "targetCkTypeId": "EnergyCommunity-1.0.0/EdaProcess-1.0.0"
+        }
+      ],
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "Store messages sent and received in the Energy Data Access (EDA) system.",
+      "attributes": [
+        {
+          "id": "EnergyCommunity-1.0.0/EdaMessageType-1.0.0",
+          "name": "MessageType",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaMessageProcessed-1.0.0",
+          "name": "Processed",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaSenderId-1.0.0",
+          "name": "Sender",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaReceiverId-1.0.0",
+          "name": "Receiver",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/Time-1.0.0",
+          "name": "CreationDate",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaMessageId-1.0.0",
+          "name": "MessageId",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaConversationId-1.0.0",
+          "name": "ConversationId",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/MeteringPointNumber-1.0.0",
+          "name": "MeteringPoint",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaRawMessage-1.0.0",
+          "name": "RawMessage",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
+      "typeId": "EdaMeteringPoint-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "Metering Point from EDA import",
+      "attributes": [
+        {
+          "id": "EnergyCommunity-1.0.0/MeteringPointNumber-1.0.0",
+          "name": "MeteringPointNumber",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/PartitionFactor-1.0.0",
+          "name": "PartitionFactor",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/ProductionType-1.0.0",
+          "name": "ProductionType",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/IsProducer-1.0.0",
+          "name": "IsProducer",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "EdaProcess-1.0.0",
+      "derivedFromCkTypeId": "Basic-1.0.0/NamedEntity-1.0.0",
+      "isFinal": false,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "Store started processes in the Energy Data Access (EDA) system.",
+      "attributes": [
+        {
+          "id": "EnergyCommunity-1.0.0/EdaConversationId-1.0.0",
+          "name": "ConversationId",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaProcessFinished-1.0.0",
+          "name": "Finished",
+          "isOptional": false
+        },
+        {
+          "id": "Basic-1.0.0/Time-1.0.0",
+          "name": "StartTime",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaSenderId-1.0.0",
+          "name": "Sender",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaReceiverId-1.0.0",
+          "name": "Receiver",
+          "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/MeteringPointNumber-1.0.0",
+          "name": "MeteringPointNumber",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaProcessSuccess-1.0.0",
+          "name": "Success",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaProcessInfo-1.0.0",
+          "name": "Info",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaResponseCode-1.0.0",
+          "name": "ResponseCode",
+          "isOptional": true
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/EdaRawMessage-1.0.0",
+          "name": "RawMessage",
+          "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": true,
       "typeId": "EnergyPrice-1.0.0",
       "derivedFromCkTypeId": "System-1.0.0/Entity-1.0.0",
       "isFinal": false,
@@ -261,6 +418,11 @@
           "id": "EnergyCommunity-1.0.0/State-1.0.0",
           "name": "State",
           "isOptional": false
+        },
+        {
+          "id": "EnergyCommunity-1.0.0/PartitionFactor-1.0.0",
+          "name": "PartitionFactor",
+          "isOptional": true
         }
       ]
     },
@@ -336,6 +498,14 @@
       "inboundMultiplicity": "N",
       "outboundMultiplicity": "One",
       "description": "The customer associated with the operating facilities."
+    },
+    {
+      "id": "MessageToProcess-1.0.0",
+      "inboundName": "Messages",
+      "outboundName": "Process",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "ZeroOrOne",
+      "description": "Association between a message and the process it is part of."
     }
   ],
   "attributes": [
@@ -376,6 +546,50 @@
       "valueCkEnumId": "EnergyCommunity-1.0.0/DataQuality-1.0.0",
       "description": "The quality of the received data",
       "isDataStream": true
+    },
+    {
+      "id": "EdaConversationId-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EdaMessageId-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EdaMessageProcessed-1.0.0",
+      "valueType": "Boolean"
+    },
+    {
+      "id": "EdaMessageType-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EdaProcessFinished-1.0.0",
+      "valueType": "Boolean"
+    },
+    {
+      "id": "EdaProcessInfo-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EdaProcessSuccess-1.0.0",
+      "valueType": "Boolean"
+    },
+    {
+      "id": "EdaRawMessage-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EdaReceiverId-1.0.0",
+      "valueType": "String"
+    },
+    {
+      "id": "EdaResponseCode-1.0.0",
+      "valueType": "Int"
+    },
+    {
+      "id": "EdaSenderId-1.0.0",
+      "valueType": "String"
     },
     {
       "id": "EnergyConsumption-1.0.0",
@@ -420,6 +634,11 @@
       "description": "The gross total of the billing document"
     },
     {
+      "id": "IsProducer-1.0.0",
+      "valueType": "Boolean",
+      "description": "Indicates if the new metering point is a producer"
+    },
+    {
       "id": "MeteringPointNumber-1.0.0",
       "valueType": "String",
       "description": "Number identifying the metering point"
@@ -428,6 +647,11 @@
       "id": "NetAmount-1.0.0",
       "valueType": "Double",
       "description": "The net amount of the billing document"
+    },
+    {
+      "id": "PartitionFactor-1.0.0",
+      "valueType": "Int",
+      "description": "Partition factor for the metering point to a specific energy community"
     },
     {
       "id": "Price-1.0.0",
@@ -531,6 +755,12 @@
           "key": 3,
           "name": "Paid",
           "description": "The billing document has been paid",
+          "isExtension": false
+        },
+        {
+          "key": 4,
+          "name": "Canceled",
+          "description": "The billing document has been canceled",
           "isExtension": false
         }
       ],
@@ -671,6 +901,12 @@
           "key": 5,
           "name": "CHP",
           "description": "Combined heat and power was used to produce the energy",
+          "isExtension": false
+        },
+        {
+          "key": 6,
+          "name": "Other",
+          "description": "Other methods were used to produce the energy",
           "isExtension": false
         }
       ],
