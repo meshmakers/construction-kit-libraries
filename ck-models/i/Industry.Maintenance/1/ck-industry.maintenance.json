@@ -94,8 +94,8 @@
           "targetCkTypeId": "Industry.Basic-1.0.0/Event-1.0.0"
         },
         {
-          "id": "Basic-1.0.0/RelatedClassification-1.0.0",
-          "targetCkTypeId": "Basic-1.0.0/TreeNode-1.0.0"
+          "id": "Industry.Maintenance-1.0.0/RelatedMachine-1.0.0",
+          "targetCkTypeId": "Industry.Basic-1.0.0/Machine-1.0.0"
         }
       ],
       "enableChangeStreamPreAndPostImages": false,
@@ -145,6 +145,11 @@
           "id": "Industry.Maintenance-1.0.0/OrderState-1.0.0",
           "name": "OrderState",
           "isOptional": true
+        },
+        {
+          "id": "Industry.Maintenance-1.0.0/OrderPriority-1.0.0",
+          "name": "OrderPriority",
+          "isOptional": false
         }
       ]
     },
@@ -156,7 +161,7 @@
       "isAbstract": false,
       "associations": [
         {
-          "id": "System-1.0.0/ParentChild-1.0.0",
+          "id": "Industry.Maintenance-1.0.0/Costs-1.0.0",
           "targetCkTypeId": "Industry.Maintenance-1.0.0/Order-1.0.0"
         }
       ],
@@ -181,16 +186,6 @@
         {
           "id": "Industry.Maintenance-1.0.0/MaterialCosts-1.0.0",
           "name": "MaterialCosts",
-          "isOptional": false
-        },
-        {
-          "id": "Industry.Maintenance-1.0.0/AggregationType-1.0.0",
-          "name": "AggregationType",
-          "isOptional": false
-        },
-        {
-          "id": "Industry.Maintenance-1.0.0/AggregationDate-1.0.0",
-          "name": "AggregationDate",
           "isOptional": false
         }
       ]
@@ -243,6 +238,13 @@
   ],
   "associationRoles": [
     {
+      "id": "Costs-1.0.0",
+      "inboundName": "Costs",
+      "outboundName": "Order",
+      "inboundMultiplicity": "ZeroOrOne",
+      "outboundMultiplicity": "ZeroOrOne"
+    },
+    {
       "id": "RelatedCostCenter-1.0.0",
       "inboundName": "JournalEntries",
       "outboundName": "CostCenter",
@@ -255,6 +257,13 @@
       "outboundName": "Event",
       "inboundMultiplicity": "One",
       "outboundMultiplicity": "ZeroOrOne"
+    },
+    {
+      "id": "RelatedMachine-1.0.0",
+      "inboundName": "Orders",
+      "outboundName": "Machine",
+      "inboundMultiplicity": "N",
+      "outboundMultiplicity": "One"
     },
     {
       "id": "ReportingEmployee-1.0.0",
@@ -322,7 +331,10 @@
     {
       "id": "OrderPriority-1.0.0",
       "valueType": "Enum",
-      "valueCkEnumId": "Industry.Maintenance-1.0.0/OrderPriority-1.0.0"
+      "valueCkEnumId": "Industry.Maintenance-1.0.0/OrderPriority-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
     },
     {
       "id": "OrderState-1.0.0",
