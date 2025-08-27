@@ -34,7 +34,8 @@
       "isFinal": false,
       "isAbstract": true,
       "enableChangeStreamPreAndPostImages": false,
-      "isStreamType": false
+      "isStreamType": false,
+      "description": "Base type for all configuration types"
     },
     {
       "isCollectionRoot": false,
@@ -147,11 +148,34 @@
       "isAbstract": false,
       "enableChangeStreamPreAndPostImages": false,
       "isStreamType": false,
+      "description": "Configuration for a tenant regarding data version of schema or identity data",
       "attributes": [
         {
           "id": "System-1.0.0/ConfigurationValue-1.0.0",
           "name": "ConfigurationValue",
           "isOptional": true
+        }
+      ]
+    },
+    {
+      "isCollectionRoot": false,
+      "typeId": "TenantModeConfiguration-1.0.0",
+      "derivedFromCkTypeId": "System-1.0.0/Configuration-1.0.0",
+      "isFinal": true,
+      "isAbstract": false,
+      "enableChangeStreamPreAndPostImages": false,
+      "isStreamType": false,
+      "description": "Configuration for a tenant if the tenant is in a specific mode, e.g. test mode or maintenance mode",
+      "attributes": [
+        {
+          "id": "System-1.0.0/EnvironmentMode-1.0.0",
+          "name": "EnvironmentMode",
+          "isOptional": false
+        },
+        {
+          "id": "System-1.0.0/MaintenanceLevel-1.0.0",
+          "name": "MaintenanceLevel",
+          "isOptional": false
         }
       ]
     }
@@ -219,9 +243,25 @@
       "valueType": "Boolean"
     },
     {
+      "id": "EnvironmentMode-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System-1.0.0/EnvironmentModes-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
+    },
+    {
       "id": "FieldFilter.Operator-1.0.0",
       "valueType": "Enum",
       "valueCkEnumId": "System-1.0.0/FieldFilterOperator-1.0.0"
+    },
+    {
+      "id": "MaintenanceLevel-1.0.0",
+      "valueType": "Enum",
+      "valueCkEnumId": "System-1.0.0/MaintenanceLevels-1.0.0",
+      "defaultValues": [
+        "0"
+      ]
     },
     {
       "id": "Name-1.0.0",
@@ -349,6 +389,38 @@
   ],
   "enums": [
     {
+      "enumId": "EnvironmentModes-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Development",
+          "description": "The tenant is in development mode, used for development and testing",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "Testing",
+          "description": "The tenant is in testing mode, used for quality assurance",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "Staging",
+          "description": "The tenant is in staging mode, used for pre-production testing",
+          "isExtension": false
+        },
+        {
+          "key": 3,
+          "name": "Production",
+          "description": "The tenant is in production mode, used for live operations",
+          "isExtension": false
+        }
+      ],
+      "description": "This enum defines the different modes a tenant can operate in."
+    },
+    {
       "enumId": "FieldFilterOperator-1.0.0",
       "useFlags": false,
       "isExtensible": false,
@@ -433,6 +505,32 @@
         }
       ],
       "description": "The operator to use for filtering fields."
+    },
+    {
+      "enumId": "MaintenanceLevels-1.0.0",
+      "useFlags": false,
+      "isExtensible": false,
+      "values": [
+        {
+          "key": 0,
+          "name": "Off",
+          "description": "The maintenance mode is off, the tenant is fully operational",
+          "isExtension": false
+        },
+        {
+          "key": 1,
+          "name": "UserApps",
+          "description": "The user apps are in maintenance mode, the tenant is operational but user apps are not available",
+          "isExtension": false
+        },
+        {
+          "key": 2,
+          "name": "FullSystem",
+          "description": "The full system is in maintenance mode, the tenant is not operational",
+          "isExtension": false
+        }
+      ],
+      "description": "This enum defines the maintenance level of a tenant."
     },
     {
       "enumId": "QueryTypes-1.0.0",
