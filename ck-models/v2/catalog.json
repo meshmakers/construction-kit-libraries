@@ -1,7 +1,11 @@
 {
   "version": "1.0",
-  "updatedAt": "2025-11-10T14:34:24.393144Z",
+  "updatedAt": "2025-11-10T14:36:47.4440366Z",
   "models": [
+    {
+      "modelName": "System",
+      "catalogPath": "ck-models/v2/s/System/catalog.json"
+    },
     {
       "modelName": "System.TestIdentity",
       "catalogPath": "ck-models/v2/s/System.TestIdentity/catalog.json"
