@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "updatedAt": "2025-11-10T14:34:24.393144Z",
+  "models": [
+    {
+      "modelName": "System.TestIdentity",
+      "catalogPath": "ck-models/v2/s/System.TestIdentity/catalog.json"
+    }
+  ]
+}
