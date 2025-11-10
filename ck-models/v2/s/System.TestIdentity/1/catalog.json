@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "modelId": "System.TestIdentity",
+  "majorVersion": 1,
+  "latestVersion": "1.0.0",
+  "description": "Test Identity construction kit model",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "fileName": "ck-system.testidentity-1.0.0.json",
+      "filePath": "ck-models/v2/s/System.TestIdentity/1/ck-system.testidentity-1.0.0.json",
+      "publishedAt": "2025-11-10T13:34:14.6970249Z"
+    }
+  ],
+  "updatedAt": "2025-11-10T13:34:14.6990786Z"
+}
