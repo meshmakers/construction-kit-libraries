@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "modelId": "System.Communication",
+  "majorVersion": 1,
+  "latestVersion": "1.0.0",
+  "description": null,
+  "versions": [
+    {
+      "version": "1.0.0",
+      "fileName": "ck-system.communication-1.0.0.json",
+      "filePath": "ck-models/v2/s/System.Communication/1/ck-system.communication-1.0.0.json",
+      "publishedAt": "2025-11-11T09:00:13.483625Z"
+    }
+  ],
+  "updatedAt": "2025-11-11T09:00:13.484015Z"
+}
