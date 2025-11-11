@@ -11,10 +11,6 @@
       "catalogPath": "ck-models/v2/s/System.Bot/catalog.json"
     },
     {
-      "modelName": "System.Communication",
-      "catalogPath": "ck-models/v2/s/System.Communication/catalog.json"
-    },
-    {
       "modelName": "System.Identity",
       "catalogPath": "ck-models/v2/s/System.Identity/catalog.json"
     },
