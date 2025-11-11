@@ -1,10 +1,14 @@
 {
   "version": "1.0",
-  "updatedAt": "2025-11-10T15:19:06.3679399Z",
+  "updatedAt": "2025-11-11T06:40:22.4170314Z",
   "models": [
     {
       "modelName": "System",
       "catalogPath": "ck-models/v2/s/System/catalog.json"
+    },
+    {
+      "modelName": "System.Notification",
+      "catalogPath": "ck-models/v2/s/System.Notification/catalog.json"
     },
     {
       "modelName": "System.TestIdentity",
