@@ -1,10 +1,14 @@
 {
   "version": "1.0",
-  "updatedAt": "2025-11-11T10:20:11.2138694Z",
+  "updatedAt": "2025-11-11T10:29:48.369412Z",
   "models": [
     {
       "modelName": "System",
       "catalogPath": "ck-models/v2/s/System/catalog.json"
+    },
+    {
+      "modelName": "System.Ai",
+      "catalogPath": "ck-models/v2/s/System.Ai/catalog.json"
     },
     {
       "modelName": "System.Bot",
