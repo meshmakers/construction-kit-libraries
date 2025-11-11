@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "modelId": "System.Ai",
+  "majorVersion": 1,
+  "latestVersion": "1.0.0",
+  "description": "Construction Kit model for AI Services - Graph-based conversation system with nodes, messages, and contexts",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "fileName": "ck-system.ai-1.0.0.json",
+      "filePath": "ck-models/v2/s/System.Ai/1/ck-system.ai-1.0.0.json",
+      "publishedAt": "2025-11-11T10:29:46.0343347Z"
+    }
+  ],
+  "updatedAt": "2025-11-11T10:29:46.0361973Z"
+}
