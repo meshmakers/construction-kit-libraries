@@ -2,7 +2,7 @@
   "version": "1.0",
   "modelId": "System",
   "majorVersion": 1,
-  "latestVersion": "1.0.2",
+  "latestVersion": "1.0.3",
   "description": "System model library",
   "versions": [
     {
@@ -10,7 +10,13 @@
       "fileName": "ck-system-1.0.2.json",
       "filePath": "ck-models/v2/s/System/1/ck-system-1.0.2.json",
       "publishedAt": "2025-11-10T14:36:45.3531077Z"
+    },
+    {
+      "version": "1.0.3",
+      "fileName": "ck-system-1.0.3.json",
+      "filePath": "ck-models/v2/s/System/1/ck-system-1.0.3.json",
+      "publishedAt": "2025-11-11T12:57:12.9380126Z"
     }
   ],
-  "updatedAt": "2025-11-10T14:36:45.3554712Z"
+  "updatedAt": "2025-11-11T12:57:12.9410259Z"
 }
